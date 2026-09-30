@@ -1,0 +1,32 @@
+name: 手動更新洗衣機售價
+
+on:
+  workflow_dispatch: # 代表只接受手動觸發按鈕，絕不自動定時執行
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 下載專案資料
+        uses: actions/checkout@v4
+
+      - name: 設定 Python 環境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: 安裝網絡庫
+        run: |
+          pip install requests
+
+      - name: 執行安全爬蟲
+        run: |
+          python scraper.py
+
+      - name: 儲存最新價格回 GitHub
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add data.json
+          git commit -m "手動更新洗衣機售價數據 [skip ci]" || exit 0
+          git push
