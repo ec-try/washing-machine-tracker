@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hong Kong Washing Machine Price Tracker</title>
   
-  <!-- CDN Libraries: Tailwind CSS, Vue.js 3, Chart.js, SheetJS -->
+  <!-- CDN Libraries -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased min-h-screen p-4 md:p-8">
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen p-4 md:p-8" @click="closeAllDropdowns">
 
   <div id="app" class="max-w-7xl mx-auto space-y-6">
 
@@ -20,95 +20,137 @@
       <div>
         <div class="flex items-center gap-2">
           <span class="text-2xl">🧺</span>
-          <h1 class="text-2xl font-bold tracking-tight text-slate-900">HK Washer & Washer-Dryer Price Dashboard</h1>
+          <h1 class="text-2xl font-bold tracking-tight text-slate-900">Hong Kong Washer & Washer-Dryer Live Market Dashboard</h1>
         </div>
         <p class="text-sm text-slate-500 mt-1">
-          Tracking price movements from leading online retailers: 
-          <a href="https://www.fortress.com.hk/en/" target="_blank" class="text-blue-600 hover:underline">Fortress</a> & 
-          <a href="https://www.broadwaylifestyle.com/en" target="_blank" class="text-orange-600 hover:underline">Broadway</a>
+          Catalog Sources: 
+          <a href="https://www.fortress.com.hk/en/shop/major-appliances/washer-and-clothes-dryer/c/52" target="_blank" class="text-blue-600 hover:underline font-medium">Fortress HK</a> & 
+          <a href="https://www.broadwaylifestyle.com/en/collections/washer" target="_blank" class="text-orange-600 hover:underline font-medium">Broadway Lifestyle</a> 
+          (Excludes Top Load Washers and standalone Dryers)
         </p>
       </div>
 
       <div class="flex items-center gap-3">
         <button @click="resetFilters" class="px-4 py-2 border border-slate-300 rounded-xl text-sm font-medium hover:bg-slate-50 text-slate-600 transition">
-          Reset Filters
+          Reset All Filters
         </button>
         <button @click="exportToExcel" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-sm font-medium transition flex items-center gap-2 shadow-sm">
-          <span>📊</span> Export to Excel
+          <span>📊</span> Export to Excel (.xlsx)
         </button>
       </div>
     </header>
 
-    <!-- Filter Control Panel -->
+    <!-- Multi-Select Filters Panel -->
     <section class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+      <div class="flex justify-between items-center mb-4">
+        <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Multi-Select Filters (Select multiple options per column)</span>
+        <span class="text-xs text-slate-500">{{ activeFilterCount }} filter criteria applied</span>
+      </div>
+
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
         
-        <!-- Type Filter -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Type</label>
-          <select v-model="filters.type" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
-            <option value="">All Types</option>
-            <option value="Washer">Washer</option>
-            <option value="Washer-dryer">Washer-dryer</option>
-          </select>
+        <!-- 1. Type Filter (Multi-Select) -->
+        <div class="relative" @click.stop>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Type</label>
+          <button @click="toggleDropdown('type')" class="w-full text-left bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-sm flex justify-between items-center">
+            <span class="truncate">{{ getFilterLabel(filters.type, 'All Types') }}</span>
+            <span class="text-xs text-slate-400">▼</span>
+          </button>
+          <div v-show="activeDropdown === 'type'" class="absolute z-20 mt-1 w-52 bg-white border border-slate-200 rounded-xl shadow-lg p-2 space-y-1">
+            <label v-for="t in distinctTypes" :key="t" class="flex items-center gap-2 px-2 py-1.5 hover:bg-slate-50 rounded-lg cursor-pointer text-sm">
+              <input type="checkbox" :value="t" v-model="filters.type" class="rounded text-indigo-600">
+              <span>{{ t }}</span>
+            </label>
+          </div>
         </div>
 
-        <!-- Brand Filter -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Brand</label>
-          <select v-model="filters.brand" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
-            <option value="">All Brands</option>
-            <option v-for="b in brands" :key="b" :value="b">{{ b }}</option>
-          </select>
+        <!-- 2. Brand Filter (Multi-Select) -->
+        <div class="relative" @click.stop>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Brand</label>
+          <button @click="toggleDropdown('brand')" class="w-full text-left bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-sm flex justify-between items-center">
+            <span class="truncate">{{ getFilterLabel(filters.brand, 'All Brands') }}</span>
+            <span class="text-xs text-slate-400">▼</span>
+          </button>
+          <div v-show="activeDropdown === 'brand'" class="absolute z-20 mt-1 w-56 max-h-60 overflow-y-auto bg-white border border-slate-200 rounded-xl shadow-lg p-2 space-y-1">
+            <label v-for="b in distinctBrands" :key="b" class="flex items-center gap-2 px-2 py-1.5 hover:bg-slate-50 rounded-lg cursor-pointer text-sm">
+              <input type="checkbox" :value="b" v-model="filters.brand" class="rounded text-indigo-600">
+              <span>{{ b }}</span>
+            </label>
+          </div>
         </div>
 
-        <!-- Wash Load Filter -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Wash Load (kg)</label>
-          <select v-model="filters.washLoad" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
-            <option value="">All Capacities</option>
-            <option v-for="wl in washLoads" :key="wl" :value="wl">{{ wl }}</option>
-          </select>
+        <!-- 3. Wash Load Filter (Multi-Select) -->
+        <div class="relative" @click.stop>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Wash Load (kg)</label>
+          <button @click="toggleDropdown('washLoad')" class="w-full text-left bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-sm flex justify-between items-center">
+            <span class="truncate">{{ getFilterLabel(filters.washLoad, 'All Loads') }}</span>
+            <span class="text-xs text-slate-400">▼</span>
+          </button>
+          <div v-show="activeDropdown === 'washLoad'" class="absolute z-20 mt-1 w-52 max-h-60 overflow-y-auto bg-white border border-slate-200 rounded-xl shadow-lg p-2 space-y-1">
+            <label v-for="wl in distinctWashLoads" :key="wl" class="flex items-center gap-2 px-2 py-1.5 hover:bg-slate-50 rounded-lg cursor-pointer text-sm">
+              <input type="checkbox" :value="wl" v-model="filters.washLoad" class="rounded text-indigo-600">
+              <span>{{ wl }}</span>
+            </label>
+          </div>
         </div>
 
-        <!-- Spin Speed Filter -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Spin Speed (RPM)</label>
-          <select v-model="filters.spin" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
-            <option value="">All Speeds</option>
-            <option v-for="s in spinSpeeds" :key="s" :value="s">{{ s }} RPM</option>
-          </select>
+        <!-- 4. Spin Speed Filter (Multi-Select) -->
+        <div class="relative" @click.stop>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Spin Speed (RPM)</label>
+          <button @click="toggleDropdown('spin')" class="w-full text-left bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-sm flex justify-between items-center">
+            <span class="truncate">{{ getFilterLabel(filters.spin, 'All Speeds') }}</span>
+            <span class="text-xs text-slate-400">▼</span>
+          </button>
+          <div v-show="activeDropdown === 'spin'" class="absolute z-20 mt-1 w-52 bg-white border border-slate-200 rounded-xl shadow-lg p-2 space-y-1">
+            <label v-for="s in distinctSpins" :key="s" class="flex items-center gap-2 px-2 py-1.5 hover:bg-slate-50 rounded-lg cursor-pointer text-sm">
+              <input type="checkbox" :value="s" v-model="filters.spin" class="rounded text-indigo-600">
+              <span>{{ s }} RPM</span>
+            </label>
+          </div>
         </div>
 
-        <!-- Depth Limit Filter -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Max Depth (cm)</label>
-          <select v-model="filters.maxDepth" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
-            <option value="">No Limit</option>
-            <option value="53">≤ 53 cm (Slim)</option>
-            <option value="56">≤ 56 cm (Compact)</option>
-            <option value="60">≤ 60 cm (Standard)</option>
-          </select>
+        <!-- 5. Depth Range Filter (Multi-Select) -->
+        <div class="relative" @click.stop>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">Depth Category (cm)</label>
+          <button @click="toggleDropdown('depth')" class="w-full text-left bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-sm flex justify-between items-center">
+            <span class="truncate">{{ getFilterLabel(filters.depthRange, 'All Depths') }}</span>
+            <span class="text-xs text-slate-400">▼</span>
+          </button>
+          <div v-show="activeDropdown === 'depth'" class="absolute z-20 mt-1 w-56 bg-white border border-slate-200 rounded-xl shadow-lg p-2 space-y-1">
+            <label v-for="d in depthOptions" :key="d.id" class="flex items-center gap-2 px-2 py-1.5 hover:bg-slate-50 rounded-lg cursor-pointer text-sm">
+              <input type="checkbox" :value="d.id" v-model="filters.depthRange" class="rounded text-indigo-600">
+              <span>{{ d.label }}</span>
+            </label>
+          </div>
         </div>
 
-        <!-- BU Available (Y/N) Filter -->
-        <div>
-          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">BU Available</label>
-          <select v-model="filters.buAvailable" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
-            <option value="">All</option>
-            <option value="Y">Yes (Y)</option>
-            <option value="N">No (N)</option>
-          </select>
+        <!-- 6. BU Available Filter (Multi-Select) -->
+        <div class="relative" @click.stop>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">BU Available</label>
+          <button @click="toggleDropdown('bu')" class="w-full text-left bg-slate-50 border border-slate-300 rounded-xl px-3 py-2 text-sm flex justify-between items-center">
+            <span class="truncate">{{ getFilterLabel(filters.buAvailable, 'All (Y/N)') }}</span>
+            <span class="text-xs text-slate-400">▼</span>
+          </button>
+          <div v-show="activeDropdown === 'bu'" class="absolute z-20 mt-1 w-48 bg-white border border-slate-200 rounded-xl shadow-lg p-2 space-y-1">
+            <label class="flex items-center gap-2 px-2 py-1.5 hover:bg-slate-50 rounded-lg cursor-pointer text-sm">
+              <input type="checkbox" value="Y" v-model="filters.buAvailable" class="rounded text-indigo-600">
+              <span>Y (Built-under eligible)</span>
+            </label>
+            <label class="flex items-center gap-2 px-2 py-1.5 hover:bg-slate-50 rounded-lg cursor-pointer text-sm">
+              <input type="checkbox" value="N" v-model="filters.buAvailable" class="rounded text-indigo-600">
+              <span>N (Not available)</span>
+            </label>
+          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- Product Price Table -->
+    <!-- Products Data Table -->
     <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
       <div class="p-4 border-b border-slate-100 flex justify-between items-center text-sm text-slate-500">
-        <span>Showing <strong>{{ filteredProducts.length }}</strong> models matching criteria</span>
-        <span class="text-xs">Latest Date Recorded: {{ latestDate }}</span>
+        <span>Displaying <strong>{{ filteredProducts.length }}</strong> genuine models matching selected criteria</span>
+        <span class="text-xs">Database Snapshot: {{ latestDate }}</span>
       </div>
 
       <div class="overflow-x-auto">
@@ -124,7 +166,7 @@
               <th class="p-4 text-center">BU Available</th>
               <th class="p-4 text-right text-blue-700">Fortress Price</th>
               <th class="p-4 text-right text-orange-700">Broadway Price</th>
-              <th class="p-4 text-center">History</th>
+              <th class="p-4 text-center">Trend</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-100 text-sm">
@@ -159,13 +201,13 @@
               </td>
               <td class="p-4 text-center">
                 <button @click="openChartModal(item)" class="text-indigo-600 hover:text-indigo-900 text-xs font-semibold underline">
-                  Trend
+                  Chart
                 </button>
               </td>
             </tr>
             <tr v-if="filteredProducts.length === 0">
               <td colspan="10" class="p-8 text-center text-slate-400 text-sm">
-                No washing machine models match the selected criteria.
+                No washing machine models match the combined filter criteria.
               </td>
             </tr>
           </tbody>
@@ -173,23 +215,19 @@
       </div>
     </section>
 
-    <!-- Price History Modal Dialog -->
+    <!-- Modal Price History -->
     <div v-if="selectedProduct" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
       <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl space-y-4">
         <div class="flex justify-between items-center border-b border-slate-100 pb-3">
           <div>
-            <h3 class="text-lg font-bold text-slate-900">{{ selectedProduct.id }} - Price History</h3>
-            <p class="text-xs text-slate-500">{{ selectedProduct.brand }} | {{ selectedProduct.type }} ({{ selectedProduct.wash_load }})</p>
+            <h3 class="text-lg font-bold text-slate-900">{{ selectedProduct.id }} - Price Fluctuation</h3>
+            <p class="text-xs text-slate-500">{{ selectedProduct.brand }} | {{ selectedProduct.name }} ({{ selectedProduct.wash_load }})</p>
           </div>
           <button @click="selectedProduct = null" class="text-slate-400 hover:text-slate-600 text-2xl font-light">&times;</button>
         </div>
 
         <div class="h-72 w-full">
           <canvas id="priceHistoryChart"></canvas>
-        </div>
-
-        <div class="text-xs text-slate-400 text-right">
-          * Price currency in Hong Kong Dollars (HKD)
         </div>
       </div>
     </div>
@@ -201,75 +239,84 @@
 
     createApp({
       setup() {
-        // Default models data
-        const products = ref([
-          { id: "WAU28760HK", brand: "Bosch", type: "Washer", name: "Serie 6 Front Load Washer", wash_load: "9 kg", spin: 1400, depth_cm: 59.0, bu_available: "Y" },
-          { id: "WNA24408HK", brand: "Bosch", type: "Washer-dryer", name: "Serie 4 Front Load Washer-Dryer", wash_load: "9/6 kg", spin: 1400, depth_cm: 59.0, bu_available: "Y" },
-          { id: "WM14U860HK", brand: "Siemens", type: "Washer", name: "iQ500 Front Load Washer", wash_load: "10 kg", spin: 1400, depth_cm: 59.8, bu_available: "N" },
-          { id: "WD14S460HK", brand: "Siemens", type: "Washer-dryer", name: "iQ500 Front Load Washer-Dryer", wash_load: "8/5 kg", spin: 1400, depth_cm: 59.0, bu_available: "Y" },
-          { id: "NA-140VX7", brand: "Panasonic", type: "Washer", name: "Inverter Front Load Washer", wash_load: "10 kg", spin: 1400, depth_cm: 59.5, bu_available: "N" },
-          { id: "NA-S085M2", brand: "Panasonic", type: "Washer-dryer", name: "Front Load Washer-Dryer", wash_load: "8/5 kg", spin: 1400, depth_cm: 52.0, bu_available: "Y" },
-          { id: "F-V1409H4W", brand: "LG", type: "Washer", name: "AI DD Front Load Washer", wash_load: "9 kg", spin: 1400, depth_cm: 56.0, bu_available: "N" },
-          { id: "FV9S90V2W", brand: "LG", type: "Washer-dryer", name: "AI DD Front Load Washer-Dryer", wash_load: "9/6 kg", spin: 1400, depth_cm: 56.0, bu_available: "N" },
-          { id: "WW80TA046TE", brand: "Samsung", type: "Washer", name: "EcoBubble Front Load Washer", wash_load: "8 kg", spin: 1400, depth_cm: 55.0, bu_available: "N" },
-          { id: "WD80T654DBE", brand: "Samsung", type: "Washer-dryer", name: "QuickDrive Front Load Washer-Dryer", wash_load: "8/5 kg", spin: 1400, depth_cm: 55.0, bu_available: "N" }
-        ]);
+        const products = ref([]);
+        const history = ref([]);
 
-        const history = ref([
-          { date: "2026-09-20", id: "WAU28760HK", fortress: 6280, broadway: 6300 },
-          { date: "2026-09-25", id: "WAU28760HK", fortress: 6180, broadway: 6200 },
-          { date: "2026-09-30", id: "WAU28760HK", fortress: 6080, broadway: 6150 },
-          { date: "2026-09-30", id: "WNA24408HK", fortress: 7280, broadway: 7350 },
-          { date: "2026-09-30", id: "WM14U860HK", fortress: 7180, broadway: 7250 },
-          { date: "2026-09-30", id: "WD14S460HK", fortress: 7580, broadway: 7650 },
-          { date: "2026-09-30", id: "NA-140VX7", fortress: 5380, broadway: 5450 },
-          { date: "2026-09-30", id: "NA-S085M2", fortress: 5980, broadway: 6050 },
-          { date: "2026-09-30", id: "F-V1409H4W", fortress: 4790, broadway: 4880 },
-          { date: "2026-09-30", id: "FV9S90V2W", fortress: 6490, broadway: 6580 },
-          { date: "2026-09-30", id: "WW80TA046TE", fortress: 4180, broadway: 4200 },
-          { date: "2026-09-30", id: "WD80T654DBE", fortress: 5680, broadway: 5750 }
-        ]);
-
+        // Multi-select state (arrays)
         const filters = ref({
-          type: '',
-          brand: '',
-          washLoad: '',
-          spin: '',
-          maxDepth: '',
-          buAvailable: ''
+          type: [],
+          brand: [],
+          washLoad: [],
+          spin: [],
+          depthRange: [],
+          buAvailable: []
         });
 
+        const activeDropdown = ref(null);
         const selectedProduct = ref(null);
         let chartInstance = null;
 
-        // Fetch external data.json generated by scraper
+        const depthOptions = [
+          { id: 'ultra-slim', label: 'Ultra Slim (≤ 48 cm)', test: (d) => d <= 48 },
+          { id: 'compact', label: 'Compact (≤ 55 cm)', test: (d) => d <= 55 },
+          { id: 'standard', label: 'Standard (≤ 60 cm)', test: (d) => d <= 60 },
+          { id: 'large', label: 'Large (> 60 cm)', test: (d) => d > 60 }
+        ];
+
         onMounted(async () => {
           try {
             const res = await fetch('data.json?t=' + Date.now());
             if (res.ok) {
               const data = await res.json();
-              if (data.products && data.products.length) products.value = data.products;
-              if (data.history && data.history.length) history.value = data.history;
+              products.value = data.products || [];
+              history.value = data.history || [];
             }
           } catch (e) {
-            console.log("Using default demo dataset");
+            console.error("Unable to load data.json", e);
           }
         });
 
-        // Dynamic distinct options for select dropdowns
-        const brands = computed(() => [...new Set(products.value.map(p => p.brand))].sort());
-        const washLoads = computed(() => [...new Set(products.value.map(p => p.wash_load))].sort());
-        const spinSpeeds = computed(() => [...new Set(products.value.map(p => p.spin))].sort((a,b) => a - b));
+        // Distinct attributes for checkboxes
+        const distinctTypes = computed(() => [...new Set(products.value.map(p => p.type))].filter(Boolean));
+        const distinctBrands = computed(() => [...new Set(products.value.map(p => p.brand))].filter(Boolean).sort());
+        const distinctWashLoads = computed(() => [...new Set(products.value.map(p => p.wash_load))].filter(Boolean).sort());
+        const distinctSpins = computed(() => [...new Set(products.value.map(p => p.spin))].filter(Boolean).sort((a,b) => a - b));
 
-        // Filter evaluation
+        const toggleDropdown = (key) => {
+          activeDropdown.value = activeDropdown.value === key ? null : key;
+        };
+
+        const closeAllDropdowns = () => {
+          activeDropdown.value = null;
+        };
+
+        const getFilterLabel = (selectedArr, defaultLabel) => {
+          if (!selectedArr || selectedArr.length === 0) return defaultLabel;
+          if (selectedArr.length === 1) return selectedArr[0];
+          return `${selectedArr.length} selected`;
+        };
+
+        const activeFilterCount = computed(() => {
+          return Object.values(filters.value).reduce((sum, arr) => sum + arr.length, 0);
+        });
+
+        // Multi-select matching engine
         const filteredProducts = computed(() => {
           return products.value.filter(p => {
-            if (filters.value.type && p.type !== filters.value.type) return false;
-            if (filters.value.brand && p.brand !== filters.value.brand) return false;
-            if (filters.value.washLoad && p.wash_load !== filters.value.washLoad) return false;
-            if (filters.value.spin && p.spin != filters.value.spin) return false;
-            if (filters.value.maxDepth && p.depth_cm > Number(filters.value.maxDepth)) return false;
-            if (filters.value.buAvailable && p.bu_available !== filters.value.buAvailable) return false;
+            if (filters.value.type.length && !filters.value.type.includes(p.type)) return false;
+            if (filters.value.brand.length && !filters.value.brand.includes(p.brand)) return false;
+            if (filters.value.washLoad.length && !filters.value.washLoad.includes(p.wash_load)) return false;
+            if (filters.value.spin.length && !filters.value.spin.includes(p.spin)) return false;
+            if (filters.value.buAvailable.length && !filters.value.buAvailable.includes(p.bu_available)) return false;
+
+            if (filters.value.depthRange.length) {
+              const matchedDepth = filters.value.depthRange.some(rangeId => {
+                const opt = depthOptions.find(o => o.id === rangeId);
+                return opt ? opt.test(p.depth_cm) : false;
+              });
+              if (!matchedDepth) return false;
+            }
+
             return true;
           });
         });
@@ -284,12 +331,11 @@
         const getLatestPrice = (id, retailer) => {
           const records = history.value.filter(h => h.id === id);
           if (!records.length) return '-';
-          const latest = records[records.length - 1];
-          return latest[retailer] || '-';
+          return records[records.length - 1][retailer] || '-';
         };
 
         const resetFilters = () => {
-          filters.value = { type: '', brand: '', washLoad: '', spin: '', maxDepth: '', buAvailable: '' };
+          filters.value = { type: [], brand: [], washLoad: [], spin: [], depthRange: [], buAvailable: [] };
         };
 
         const openChartModal = (product) => {
@@ -297,54 +343,23 @@
           nextTick(() => {
             const ctx = document.getElementById('priceHistoryChart').getContext('2d');
             const records = history.value.filter(h => h.id === product.id);
-            const labels = records.map(r => r.date);
 
             if (chartInstance) chartInstance.destroy();
 
             chartInstance = new Chart(ctx, {
               type: 'line',
               data: {
-                labels: labels,
+                labels: records.map(r => r.date),
                 datasets: [
-                  {
-                    label: 'Fortress',
-                    data: records.map(r => r.fortress),
-                    borderColor: '#2563eb',
-                    backgroundColor: '#2563eb',
-                    tension: 0.2,
-                    spanGaps: true
-                  },
-                  {
-                    label: 'Broadway',
-                    data: records.map(r => r.broadway),
-                    borderColor: '#ea580c',
-                    backgroundColor: '#ea580c',
-                    tension: 0.2,
-                    spanGaps: true
-                  }
+                  { label: 'Fortress', data: records.map(r => r.fortress), borderColor: '#2563eb', tension: 0.2 },
+                  { label: 'Broadway', data: records.map(r => r.broadway), borderColor: '#ea580c', tension: 0.2 }
                 ]
               },
-              options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                  tooltip: {
-                    callbacks: {
-                      label: (ctx) => `${ctx.dataset.label}: HK$ ${ctx.parsed.y ? ctx.parsed.y.toLocaleString() : '-'}`
-                    }
-                  }
-                },
-                scales: {
-                  y: {
-                    ticks: { callback: (val) => 'HK$ ' + val }
-                  }
-                }
-              }
+              options: { responsive: true, maintainAspectRatio: false }
             });
           });
         };
 
-        // Export current filtered list to Excel
         const exportToExcel = () => {
           const rows = filteredProducts.value.map(p => ({
             "Model ID": p.id,
@@ -355,18 +370,20 @@
             "Spin Speed (RPM)": p.spin,
             "Depth (cm)": p.depth_cm,
             "BU Available": p.bu_available,
-            "Fortress Latest Price (HKD)": getLatestPrice(p.id, 'fortress'),
-            "Broadway Latest Price (HKD)": getLatestPrice(p.id, 'broadway')
+            "Fortress Latest (HKD)": getLatestPrice(p.id, 'fortress'),
+            "Broadway Latest (HKD)": getLatestPrice(p.id, 'broadway')
           }));
 
           const ws = XLSX.utils.json_to_sheet(rows);
           const wb = XLSX.utils.book_new();
           XLSX.utils.book_append_sheet(wb, ws, "Washer_Prices");
-          XLSX.writeFile(wb, `HK_Washer_Prices_${new Date().toISOString().slice(0,10)}.xlsx`);
+          XLSX.writeFile(wb, `HK_Washer_Catalog_${new Date().toISOString().slice(0,10)}.xlsx`);
         };
 
         return {
-          products, history, filters, brands, washLoads, spinSpeeds,
+          products, history, filters, depthOptions, activeDropdown,
+          distinctTypes, distinctBrands, distinctWashLoads, distinctSpins,
+          toggleDropdown, closeAllDropdowns, getFilterLabel, activeFilterCount,
           filteredProducts, latestDate, selectedProduct, formatPrice, getLatestPrice,
           resetFilters, openChartModal, exportToExcel
         };
