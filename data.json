@@ -3,60 +3,164 @@
     {
       "id": "WAU28760HK",
       "brand": "Bosch",
-      "name": "Serie 6 前置式洗衣機 (9kg, 1400rpm)",
-      "capacity": 9,
+      "type": "Washer",
+      "name": "Serie 6 Front Load Washer",
+      "wash_load": "9 kg",
       "spin": 1400,
-      "depth": 590
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WNA24408HK",
+      "brand": "Bosch",
+      "type": "Washer-dryer",
+      "name": "Serie 4 Front Load Washer-Dryer",
+      "wash_load": "9/6 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
     },
     {
       "id": "WM14U860HK",
       "brand": "Siemens",
-      "name": "iQ500 前置式洗衣機 (10kg, 1400rpm)",
-      "capacity": 10,
+      "type": "Washer",
+      "name": "iQ500 Front Load Washer",
+      "wash_load": "10 kg",
       "spin": 1400,
-      "depth": 598
+      "depth_cm": 59.8,
+      "bu_available": "N"
+    },
+    {
+      "id": "WD14S460HK",
+      "brand": "Siemens",
+      "type": "Washer-dryer",
+      "name": "iQ500 Front Load Washer-Dryer",
+      "wash_load": "8/5 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
     },
     {
       "id": "NA-140VX7",
       "brand": "Panasonic",
-      "name": "愛及潔洗衣機 (10kg, 1400rpm)",
-      "capacity": 10,
+      "type": "Washer",
+      "name": "Inverter Front Load Washer",
+      "wash_load": "10 kg",
       "spin": 1400,
-      "depth": 595
+      "depth_cm": 59.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "NA-S085M2",
+      "brand": "Panasonic",
+      "type": "Washer-dryer",
+      "name": "Front Load Washer-Dryer",
+      "wash_load": "8/5 kg",
+      "spin": 1400,
+      "depth_cm": 52.0,
+      "bu_available": "Y"
     },
     {
       "id": "F-V1409H4W",
       "brand": "LG",
-      "name": "AI DD 洗衣機 (9kg, 1400rpm)",
-      "capacity": 9,
+      "type": "Washer",
+      "name": "AI DD Front Load Washer",
+      "wash_load": "9 kg",
       "spin": 1400,
-      "depth": 560
+      "depth_cm": 56.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "FV9S90V2W",
+      "brand": "LG",
+      "type": "Washer-dryer",
+      "name": "AI DD Front Load Washer-Dryer",
+      "wash_load": "9/6 kg",
+      "spin": 1400,
+      "depth_cm": 56.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WW80TA046TE",
+      "brand": "Samsung",
+      "type": "Washer",
+      "name": "EcoBubble Front Load Washer",
+      "wash_load": "8 kg",
+      "spin": 1400,
+      "depth_cm": 55.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WD80T654DBE",
+      "brand": "Samsung",
+      "type": "Washer-dryer",
+      "name": "QuickDrive Front Load Washer-Dryer",
+      "wash_load": "8/5 kg",
+      "spin": 1400,
+      "depth_cm": 55.0,
+      "bu_available": "N"
     }
   ],
   "history": [
     {
       "date": "2026-09-30",
       "id": "WAU28760HK",
-      "fortress": 6140,
-      "broadway": 6122
+      "fortress": 6033,
+      "broadway": 6070
+    },
+    {
+      "date": "2026-09-30",
+      "id": "WNA24408HK",
+      "fortress": 7300,
+      "broadway": 7297
     },
     {
       "date": "2026-09-30",
       "id": "WM14U860HK",
-      "fortress": 7232,
-      "broadway": 7208
+      "fortress": 7181,
+      "broadway": 7209
+    },
+    {
+      "date": "2026-09-30",
+      "id": "WD14S460HK",
+      "fortress": 7589,
+      "broadway": 7560
     },
     {
       "date": "2026-09-30",
       "id": "NA-140VX7",
-      "fortress": 5322,
-      "broadway": 5408
+      "fortress": 5376,
+      "broadway": 5429
+    },
+    {
+      "date": "2026-09-30",
+      "id": "NA-S085M2",
+      "fortress": 5964,
+      "broadway": 5948
     },
     {
       "date": "2026-09-30",
       "id": "F-V1409H4W",
-      "fortress": 4819,
-      "broadway": 4762
+      "fortress": 4798,
+      "broadway": 4771
+    },
+    {
+      "date": "2026-09-30",
+      "id": "FV9S90V2W",
+      "fortress": 6509,
+      "broadway": 6461
+    },
+    {
+      "date": "2026-09-30",
+      "id": "WW80TA046TE",
+      "fortress": 4163,
+      "broadway": 4150
+    },
+    {
+      "date": "2026-09-30",
+      "id": "WD80T654DBE",
+      "fortress": 5688,
+      "broadway": 5642
     }
   ]
 }
