@@ -1,0 +1,62 @@
+{
+  "products": [
+    {
+      "id": "WAU28760HK",
+      "brand": "Bosch",
+      "name": "Serie 6 前置式洗衣機 (9kg, 1400rpm)",
+      "capacity": 9,
+      "spin": 1400,
+      "depth": 590
+    },
+    {
+      "id": "WM14U860HK",
+      "brand": "Siemens",
+      "name": "iQ500 前置式洗衣機 (10kg, 1400rpm)",
+      "capacity": 10,
+      "spin": 1400,
+      "depth": 598
+    },
+    {
+      "id": "NA-140VX7",
+      "brand": "Panasonic",
+      "name": "愛及潔洗衣機 (10kg, 1400rpm)",
+      "capacity": 10,
+      "spin": 1400,
+      "depth": 595
+    },
+    {
+      "id": "F-V1409H4W",
+      "brand": "LG",
+      "name": "AI DD 洗衣機 (9kg, 1400rpm)",
+      "capacity": 9,
+      "spin": 1400,
+      "depth": 560
+    }
+  ],
+  "history": [
+    {
+      "date": "2026-09-30",
+      "id": "WAU28760HK",
+      "fortress": 6140,
+      "broadway": 6122
+    },
+    {
+      "date": "2026-09-30",
+      "id": "WM14U860HK",
+      "fortress": 7232,
+      "broadway": 7208
+    },
+    {
+      "date": "2026-09-30",
+      "id": "NA-140VX7",
+      "fortress": 5322,
+      "broadway": 5408
+    },
+    {
+      "date": "2026-09-30",
+      "id": "F-V1409H4W",
+      "fortress": 4819,
+      "broadway": 4762
+    }
+  ]
+}
