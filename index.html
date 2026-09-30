@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh-HK">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>香港洗衣機市場價格動態監控 Dashboard</title>
+  <title>Hong Kong Washing Machine Price Tracker</title>
   
-  <!-- 核心函式庫 (CDN) -->
+  <!-- CDN Libraries: Tailwind CSS, Vue.js 3, Chart.js, SheetJS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -15,91 +15,116 @@
 
   <div id="app" class="max-w-7xl mx-auto space-y-6">
 
-    <!-- 頂部導航與功能按鈕 -->
+    <!-- Header Section -->
     <header class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
       <div>
         <div class="flex items-center gap-2">
           <span class="text-2xl">🧺</span>
-          <h1 class="text-2xl font-bold tracking-tight text-slate-900">香港洗衣機市價即時儀表板</h1>
+          <h1 class="text-2xl font-bold tracking-tight text-slate-900">HK Washer & Washer-Dryer Price Dashboard</h1>
         </div>
         <p class="text-sm text-slate-500 mt-1">
-          整合主流電商門市報價（豐澤、百老匯、友和），支援規格交叉篩選與歷史波動分析
+          Tracking price movements from leading online retailers: 
+          <a href="https://www.fortress.com.hk/en/" target="_blank" class="text-blue-600 hover:underline">Fortress</a> & 
+          <a href="https://www.broadwaylifestyle.com/en" target="_blank" class="text-orange-600 hover:underline">Broadway</a>
         </p>
       </div>
 
       <div class="flex items-center gap-3">
-        <button @click="resetFilters" class="px-4 py-2 border border-slate-200 rounded-xl text-sm font-medium hover:bg-slate-50 text-slate-600 transition">
-          重設篩選
+        <button @click="resetFilters" class="px-4 py-2 border border-slate-300 rounded-xl text-sm font-medium hover:bg-slate-50 text-slate-600 transition">
+          Reset Filters
         </button>
         <button @click="exportToExcel" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-sm font-medium transition flex items-center gap-2 shadow-sm">
-          <span>📊</span> 匯出 Excel
+          <span>📊</span> Export to Excel
         </button>
       </div>
     </header>
 
-    <!-- 規格篩選面板 -->
+    <!-- Filter Control Panel -->
     <section class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
         
-        <!-- 品牌篩選 -->
+        <!-- Type Filter -->
         <div>
-          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">品牌 (Brand)</label>
+          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Type</label>
+          <select v-model="filters.type" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+            <option value="">All Types</option>
+            <option value="Washer">Washer</option>
+            <option value="Washer-dryer">Washer-dryer</option>
+          </select>
+        </div>
+
+        <!-- Brand Filter -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Brand</label>
           <select v-model="filters.brand" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
-            <option value="">全部品牌 ({{ brands.length }})</option>
+            <option value="">All Brands</option>
             <option v-for="b in brands" :key="b" :value="b">{{ b }}</option>
           </select>
         </div>
 
-        <!-- 洗衣量篩選 -->
+        <!-- Wash Load Filter -->
         <div>
-          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">洗衣量 (Capacity)</label>
-          <select v-model="filters.capacity" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
-            <option value="">全部容量</option>
-            <option v-for="c in availableCapacities" :key="c" :value="c">{{ c }} 公斤 (kg)</option>
+          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Wash Load (kg)</label>
+          <select v-model="filters.washLoad" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+            <option value="">All Capacities</option>
+            <option v-for="wl in washLoads" :key="wl" :value="wl">{{ wl }}</option>
           </select>
         </div>
 
-        <!-- 最高脫水轉速篩選 -->
+        <!-- Spin Speed Filter -->
         <div>
-          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">最高脫水轉速 (Spin Speed)</label>
+          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Spin Speed (RPM)</label>
           <select v-model="filters.spin" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
-            <option value="">全部轉速</option>
-            <option v-for="s in availableSpins" :key="s" :value="s">{{ s }} 轉/分鐘 (rpm)</option>
+            <option value="">All Speeds</option>
+            <option v-for="s in spinSpeeds" :key="s" :value="s">{{ s }} RPM</option>
           </select>
         </div>
 
-        <!-- 產品深度上限篩選 -->
+        <!-- Depth Limit Filter -->
         <div>
-          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">機身深度限制 (Max Depth)</label>
+          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Max Depth (cm)</label>
           <select v-model="filters.maxDepth" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
-            <option value="">不限深度</option>
-            <option value="500">超薄身 (≤ 500 mm)</option>
-            <option value="550">窄身 (≤ 550 mm)</option>
-            <option value="600">標準款 (≤ 600 mm)</option>
+            <option value="">No Limit</option>
+            <option value="53">≤ 53 cm (Slim)</option>
+            <option value="56">≤ 56 cm (Compact)</option>
+            <option value="60">≤ 60 cm (Standard)</option>
+          </select>
+        </div>
+
+        <!-- BU Available (Y/N) Filter -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">BU Available</label>
+          <select v-model="filters.buAvailable" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-sm focus:ring-2 focus:ring-indigo-500 outline-none">
+            <option value="">All</option>
+            <option value="Y">Yes (Y)</option>
+            <option value="N">No (N)</option>
           </select>
         </div>
 
       </div>
     </section>
 
-    <!-- 產品列表表格 -->
+    <!-- Product Price Table -->
     <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
       <div class="p-4 border-b border-slate-100 flex justify-between items-center text-sm text-slate-500">
-        <span>顯示 <strong>{{ filteredProducts.length }}</strong> 款符合規格型號</span>
-        <span class="text-xs">最後更新日期：{{ latestDate }}</span>
+        <span>Showing <strong>{{ filteredProducts.length }}</strong> models matching criteria</span>
+        <span class="text-xs">Latest Date Recorded: {{ latestDate }}</span>
       </div>
 
       <div class="overflow-x-auto">
         <table class="w-full text-left border-collapse">
           <thead class="bg-slate-50/75 border-b border-slate-200 text-xs font-bold text-slate-500 uppercase tracking-wider">
             <tr>
-              <th class="p-4">產品型號與名稱</th>
-              <th class="p-4">品牌</th>
-              <th class="p-4">關鍵規格 (容量 / 轉速 / 深度)</th>
-              <th class="p-4 text-right text-blue-700">豐澤 (Fortress)</th>
-              <th class="p-4 text-right text-orange-700">百老匯 (Broadway)</th>
-              <th class="p-4 text-right text-purple-700">友和 (YOHO)</th>
-              <th class="p-4 text-center">歷史趨勢</th>
+              <th class="p-4">Model & Description</th>
+              <th class="p-4">Type</th>
+              <th class="p-4">Brand</th>
+              <th class="p-4">Wash Load</th>
+              <th class="p-4">Spin Speed</th>
+              <th class="p-4">Depth</th>
+              <th class="p-4 text-center">BU Available</th>
+              <th class="p-4 text-right text-blue-700">Fortress Price</th>
+              <th class="p-4 text-right text-orange-700">Broadway Price</th>
+              <th class="p-4 text-center">History</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-100 text-sm">
@@ -109,33 +134,38 @@
                 <div class="text-xs text-slate-500">{{ item.name }}</div>
               </td>
               <td class="p-4">
+                <span :class="item.type === 'Washer-dryer' ? 'bg-purple-100 text-purple-800' : 'bg-blue-100 text-blue-800'" class="px-2.5 py-1 rounded-md text-xs font-medium">
+                  {{ item.type }}
+                </span>
+              </td>
+              <td class="p-4">
                 <span class="px-2.5 py-1 bg-slate-100 text-slate-700 rounded-md text-xs font-medium">
                   {{ item.brand }}
                 </span>
               </td>
-              <td class="p-4 text-xs text-slate-600">
-                <span class="font-semibold">{{ item.capacity }}kg</span> · 
-                <span>{{ item.spin }}rpm</span> · 
-                <span>深度 {{ item.depth }}mm</span>
+              <td class="p-4 font-semibold text-slate-700">{{ item.wash_load }}</td>
+              <td class="p-4 text-slate-600">{{ item.spin }} RPM</td>
+              <td class="p-4 text-slate-600">{{ item.depth_cm }} cm</td>
+              <td class="p-4 text-center">
+                <span :class="item.bu_available === 'Y' ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-500'" class="px-2 py-0.5 rounded text-xs font-bold">
+                  {{ item.bu_available }}
+                </span>
               </td>
-              <td class="p-4 text-right font-semibold text-blue-600">
+              <td class="p-4 text-right font-bold text-blue-600">
                 {{ formatPrice(getLatestPrice(item.id, 'fortress')) }}
               </td>
-              <td class="p-4 text-right font-semibold text-orange-600">
+              <td class="p-4 text-right font-bold text-orange-600">
                 {{ formatPrice(getLatestPrice(item.id, 'broadway')) }}
               </td>
-              <td class="p-4 text-right font-semibold text-purple-600">
-                {{ formatPrice(getLatestPrice(item.id, 'yoho')) }}
-              </td>
               <td class="p-4 text-center">
-                <button @click="openChartModal(item)" class="text-indigo-600 hover:text-indigo-900 text-xs font-medium underline">
-                  查看走勢圖
+                <button @click="openChartModal(item)" class="text-indigo-600 hover:text-indigo-900 text-xs font-semibold underline">
+                  Trend
                 </button>
               </td>
             </tr>
             <tr v-if="filteredProducts.length === 0">
-              <td colspan="7" class="p-8 text-center text-slate-400 text-sm">
-                沒有符合所選規格條件的洗衣機型號
+              <td colspan="10" class="p-8 text-center text-slate-400 text-sm">
+                No washing machine models match the selected criteria.
               </td>
             </tr>
           </tbody>
@@ -143,13 +173,13 @@
       </div>
     </section>
 
-    <!-- 歷史走勢彈出視窗 (Modal) -->
+    <!-- Price History Modal Dialog -->
     <div v-if="selectedProduct" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
       <div class="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl space-y-4">
         <div class="flex justify-between items-center border-b border-slate-100 pb-3">
           <div>
-            <h3 class="text-lg font-bold text-slate-900">{{ selectedProduct.id }}</h3>
-            <p class="text-xs text-slate-500">{{ selectedProduct.brand }} - {{ selectedProduct.name }}</p>
+            <h3 class="text-lg font-bold text-slate-900">{{ selectedProduct.id }} - Price History</h3>
+            <p class="text-xs text-slate-500">{{ selectedProduct.brand }} | {{ selectedProduct.type }} ({{ selectedProduct.wash_load }})</p>
           </div>
           <button @click="selectedProduct = null" class="text-slate-400 hover:text-slate-600 text-2xl font-light">&times;</button>
         </div>
@@ -159,7 +189,7 @@
         </div>
 
         <div class="text-xs text-slate-400 text-right">
-          * 價格以港幣 (HKD) 計算
+          * Price currency in Hong Kong Dollars (HKD)
         </div>
       </div>
     </div>
@@ -171,42 +201,48 @@
 
     createApp({
       setup() {
-        // 內建基礎示範資料 (若載入 data.json 成功會自動覆蓋/擴充)
+        // Default models data
         const products = ref([
-          { id: "WAU28760HK", brand: "Bosch", name: "Serie 6 前置式洗衣機", capacity: 9, spin: 1400, depth: 590 },
-          { id: "WM14U860HK", brand: "Siemens", name: "iQ500 前置式洗衣機", capacity: 10, spin: 1400, depth: 598 },
-          { id: "NA-140VX7", brand: "Panasonic", name: "愛及潔系列洗衣機", capacity: 10, spin: 1400, depth: 595 },
-          { id: "F-V1409H4W", brand: "LG", name: "AI DD 前置式洗衣機", capacity: 9, spin: 1400, depth: 560 },
-          { id: "WW80TA046TE", brand: "Samsung", name: "EcoBubble 前置式", capacity: 8, spin: 1400, depth: 550 },
-          { id: "EWF8024D3WB", brand: "Electrolux", name: "UltimateCare 300", capacity: 8, spin: 1200, depth: 500 }
+          { id: "WAU28760HK", brand: "Bosch", type: "Washer", name: "Serie 6 Front Load Washer", wash_load: "9 kg", spin: 1400, depth_cm: 59.0, bu_available: "Y" },
+          { id: "WNA24408HK", brand: "Bosch", type: "Washer-dryer", name: "Serie 4 Front Load Washer-Dryer", wash_load: "9/6 kg", spin: 1400, depth_cm: 59.0, bu_available: "Y" },
+          { id: "WM14U860HK", brand: "Siemens", type: "Washer", name: "iQ500 Front Load Washer", wash_load: "10 kg", spin: 1400, depth_cm: 59.8, bu_available: "N" },
+          { id: "WD14S460HK", brand: "Siemens", type: "Washer-dryer", name: "iQ500 Front Load Washer-Dryer", wash_load: "8/5 kg", spin: 1400, depth_cm: 59.0, bu_available: "Y" },
+          { id: "NA-140VX7", brand: "Panasonic", type: "Washer", name: "Inverter Front Load Washer", wash_load: "10 kg", spin: 1400, depth_cm: 59.5, bu_available: "N" },
+          { id: "NA-S085M2", brand: "Panasonic", type: "Washer-dryer", name: "Front Load Washer-Dryer", wash_load: "8/5 kg", spin: 1400, depth_cm: 52.0, bu_available: "Y" },
+          { id: "F-V1409H4W", brand: "LG", type: "Washer", name: "AI DD Front Load Washer", wash_load: "9 kg", spin: 1400, depth_cm: 56.0, bu_available: "N" },
+          { id: "FV9S90V2W", brand: "LG", type: "Washer-dryer", name: "AI DD Front Load Washer-Dryer", wash_load: "9/6 kg", spin: 1400, depth_cm: 56.0, bu_available: "N" },
+          { id: "WW80TA046TE", brand: "Samsung", type: "Washer", name: "EcoBubble Front Load Washer", wash_load: "8 kg", spin: 1400, depth_cm: 55.0, bu_available: "N" },
+          { id: "WD80T654DBE", brand: "Samsung", type: "Washer-dryer", name: "QuickDrive Front Load Washer-Dryer", wash_load: "8/5 kg", spin: 1400, depth_cm: 55.0, bu_available: "N" }
         ]);
 
         const history = ref([
-          { date: "2026-09-20", id: "WAU28760HK", fortress: 6280, broadway: 6300, yoho: 6100 },
-          { date: "2026-09-25", id: "WAU28760HK", fortress: 6180, broadway: 6200, yoho: 6050 },
-          { date: "2026-09-30", id: "WAU28760HK", fortress: 6080, broadway: 6150, yoho: 5990 },
-
-          { date: "2026-09-20", id: "WM14U860HK", fortress: 7380, broadway: 7400, yoho: 7190 },
-          { date: "2026-09-25", id: "WM14U860HK", fortress: 7280, broadway: 7350, yoho: 7100 },
-          { date: "2026-09-30", id: "WM14U860HK", fortress: 7180, broadway: 7250, yoho: 7080 },
-
-          { date: "2026-09-30", id: "NA-140VX7", fortress: 5380, broadway: 5450, yoho: 5290 },
-          { date: "2026-09-30", id: "F-V1409H4W", fortress: 4790, broadway: 4880, yoho: 4690 },
-          { date: "2026-09-30", id: "WW80TA046TE", fortress: 4180, broadway: 4200, yoho: 3990 },
-          { date: "2026-09-30", id: "EWF8024D3WB", fortress: 3990, broadway: 4050, yoho: 3880 }
+          { date: "2026-09-20", id: "WAU28760HK", fortress: 6280, broadway: 6300 },
+          { date: "2026-09-25", id: "WAU28760HK", fortress: 6180, broadway: 6200 },
+          { date: "2026-09-30", id: "WAU28760HK", fortress: 6080, broadway: 6150 },
+          { date: "2026-09-30", id: "WNA24408HK", fortress: 7280, broadway: 7350 },
+          { date: "2026-09-30", id: "WM14U860HK", fortress: 7180, broadway: 7250 },
+          { date: "2026-09-30", id: "WD14S460HK", fortress: 7580, broadway: 7650 },
+          { date: "2026-09-30", id: "NA-140VX7", fortress: 5380, broadway: 5450 },
+          { date: "2026-09-30", id: "NA-S085M2", fortress: 5980, broadway: 6050 },
+          { date: "2026-09-30", id: "F-V1409H4W", fortress: 4790, broadway: 4880 },
+          { date: "2026-09-30", id: "FV9S90V2W", fortress: 6490, broadway: 6580 },
+          { date: "2026-09-30", id: "WW80TA046TE", fortress: 4180, broadway: 4200 },
+          { date: "2026-09-30", id: "WD80T654DBE", fortress: 5680, broadway: 5750 }
         ]);
 
         const filters = ref({
+          type: '',
           brand: '',
-          capacity: '',
+          washLoad: '',
           spin: '',
-          maxDepth: ''
+          maxDepth: '',
+          buAvailable: ''
         });
 
         const selectedProduct = ref(null);
         let chartInstance = null;
 
-        // 讀取外部爬蟲 data.json 檔
+        // Fetch external data.json generated by scraper
         onMounted(async () => {
           try {
             const res = await fetch('data.json?t=' + Date.now());
@@ -216,33 +252,33 @@
               if (data.history && data.history.length) history.value = data.history;
             }
           } catch (e) {
-            console.log("使用本地預設展示資料");
+            console.log("Using default demo dataset");
           }
         });
 
-        // 動態取得所有品牌與規格選單
+        // Dynamic distinct options for select dropdowns
         const brands = computed(() => [...new Set(products.value.map(p => p.brand))].sort());
-        const availableCapacities = computed(() => [...new Set(products.value.map(p => p.capacity))].sort((a,b) => a - b));
-        const availableSpins = computed(() => [...new Set(products.value.map(p => p.spin))].sort((a,b) => a - b));
+        const washLoads = computed(() => [...new Set(products.value.map(p => p.wash_load))].sort());
+        const spinSpeeds = computed(() => [...new Set(products.value.map(p => p.spin))].sort((a,b) => a - b));
 
-        // 過濾產品清單
+        // Filter evaluation
         const filteredProducts = computed(() => {
           return products.value.filter(p => {
+            if (filters.value.type && p.type !== filters.value.type) return false;
             if (filters.value.brand && p.brand !== filters.value.brand) return false;
-            if (filters.value.capacity && p.capacity != filters.value.capacity) return false;
+            if (filters.value.washLoad && p.wash_load !== filters.value.washLoad) return false;
             if (filters.value.spin && p.spin != filters.value.spin) return false;
-            if (filters.value.maxDepth && p.depth > Number(filters.value.maxDepth)) return false;
+            if (filters.value.maxDepth && p.depth_cm > Number(filters.value.maxDepth)) return false;
+            if (filters.value.buAvailable && p.bu_available !== filters.value.buAvailable) return false;
             return true;
           });
         });
 
-        // 獲取最新記錄日期
         const latestDate = computed(() => {
           if (!history.value.length) return '-';
           return history.value[history.value.length - 1].date;
         });
 
-        // 價格格式化
         const formatPrice = (val) => (val && val !== '-') ? `HK$ ${Number(val).toLocaleString()}` : '-';
 
         const getLatestPrice = (id, retailer) => {
@@ -253,10 +289,9 @@
         };
 
         const resetFilters = () => {
-          filters.value = { brand: '', capacity: '', spin: '', maxDepth: '' };
+          filters.value = { type: '', brand: '', washLoad: '', spin: '', maxDepth: '', buAvailable: '' };
         };
 
-        // 開啟趨勢圖
         const openChartModal = (product) => {
           selectedProduct.value = product;
           nextTick(() => {
@@ -272,27 +307,19 @@
                 labels: labels,
                 datasets: [
                   {
-                    label: '豐澤 Fortress',
+                    label: 'Fortress',
                     data: records.map(r => r.fortress),
                     borderColor: '#2563eb',
                     backgroundColor: '#2563eb',
-                    tension: 0.25,
+                    tension: 0.2,
                     spanGaps: true
                   },
                   {
-                    label: '百老匯 Broadway',
+                    label: 'Broadway',
                     data: records.map(r => r.broadway),
                     borderColor: '#ea580c',
                     backgroundColor: '#ea580c',
-                    tension: 0.25,
-                    spanGaps: true
-                  },
-                  {
-                    label: '友和 YOHO',
-                    data: records.map(r => r.yoho),
-                    borderColor: '#9333ea',
-                    backgroundColor: '#9333ea',
-                    tension: 0.25,
+                    tension: 0.2,
                     spanGaps: true
                   }
                 ]
@@ -303,7 +330,7 @@
                 plugins: {
                   tooltip: {
                     callbacks: {
-                      label: (ctx) => `${ctx.dataset.label}: HK$ ${ctx.parsed.y?.toLocaleString() || '-'}`
+                      label: (ctx) => `${ctx.dataset.label}: HK$ ${ctx.parsed.y ? ctx.parsed.y.toLocaleString() : '-'}`
                     }
                   }
                 },
@@ -317,28 +344,29 @@
           });
         };
 
-        // 匯出當前篩選資料為 Excel
+        // Export current filtered list to Excel
         const exportToExcel = () => {
           const rows = filteredProducts.value.map(p => ({
-            "型號 ID": p.id,
-            "品牌": p.brand,
-            "產品名稱": p.name,
-            "洗衣量 (kg)": p.capacity,
-            "最高脫水轉速 (rpm)": p.spin,
-            "機身深度 (mm)": p.depth,
-            "豐澤最新價 (HKD)": getLatestPrice(p.id, 'fortress'),
-            "百老匯最新價 (HKD)": getLatestPrice(p.id, 'broadway'),
-            "友和最新價 (HKD)": getLatestPrice(p.id, 'yoho')
+            "Model ID": p.id,
+            "Type": p.type,
+            "Brand": p.brand,
+            "Description": p.name,
+            "Wash Load": p.wash_load,
+            "Spin Speed (RPM)": p.spin,
+            "Depth (cm)": p.depth_cm,
+            "BU Available": p.bu_available,
+            "Fortress Latest Price (HKD)": getLatestPrice(p.id, 'fortress'),
+            "Broadway Latest Price (HKD)": getLatestPrice(p.id, 'broadway')
           }));
 
           const ws = XLSX.utils.json_to_sheet(rows);
           const wb = XLSX.utils.book_new();
-          XLSX.utils.book_append_sheet(wb, ws, "洗衣機報價清單");
-          XLSX.writeFile(wb, `香港洗衣機市場報價_${new Date().toISOString().slice(0,10)}.xlsx`);
+          XLSX.utils.book_append_sheet(wb, ws, "Washer_Prices");
+          XLSX.writeFile(wb, `HK_Washer_Prices_${new Date().toISOString().slice(0,10)}.xlsx`);
         };
 
         return {
-          products, history, filters, brands, availableCapacities, availableSpins,
+          products, history, filters, brands, washLoads, spinSpeeds,
           filteredProducts, latestDate, selectedProduct, formatPrice, getLatestPrice,
           resetFilters, openChartModal, exportToExcel
         };
