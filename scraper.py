@@ -7,7 +7,7 @@ import requests
 
 DATA_FILE = "data.json"
 
-# 1. 讀取或初始化資料庫
+# 1. Initialize or load existing database
 if os.path.exists(DATA_FILE):
     try:
         with open(DATA_FILE, "r", encoding="utf-8") as f:
@@ -19,80 +19,162 @@ else:
 
 today = datetime.now().strftime("%Y-%m-%d")
 
-# 2. 定義監控的洗衣機產品基本規格
+# 2. Filtered target list: Only Front Load Washers and Washer-Dryers (excluding Top Load & standalone Dryers)
+# Fields:
+# - id: Model number
+# - brand: Brand name
+# - type: "Washer" or "Washer-dryer"
+# - name: Model description
+# - wash_load: e.g. "9 kg" or "8/5 kg" (for Washer-dryer)
+# - spin: Spin speed (RPM)
+# - depth_cm: Depth in cm
+# - bu_available: "Y" if built-under compatible / height <= 82.5cm, otherwise "N"
 target_models = [
     {
         "id": "WAU28760HK",
         "brand": "Bosch",
-        "name": "Serie 6 前置式洗衣機 (9kg, 1400rpm)",
-        "capacity": 9,
+        "type": "Washer",
+        "name": "Serie 6 Front Load Washer",
+        "wash_load": "9 kg",
         "spin": 1400,
-        "depth": 590
+        "depth_cm": 59.0,
+        "bu_available": "Y"
+    },
+    {
+        "id": "WNA24408HK",
+        "brand": "Bosch",
+        "type": "Washer-dryer",
+        "name": "Serie 4 Front Load Washer-Dryer",
+        "wash_load": "9/6 kg",
+        "spin": 1400,
+        "depth_cm": 59.0,
+        "bu_available": "Y"
     },
     {
         "id": "WM14U860HK",
         "brand": "Siemens",
-        "name": "iQ500 前置式洗衣機 (10kg, 1400rpm)",
-        "capacity": 10,
+        "type": "Washer",
+        "name": "iQ500 Front Load Washer",
+        "wash_load": "10 kg",
         "spin": 1400,
-        "depth": 598
+        "depth_cm": 59.8,
+        "bu_available": "N"
+    },
+    {
+        "id": "WD14S460HK",
+        "brand": "Siemens",
+        "type": "Washer-dryer",
+        "name": "iQ500 Front Load Washer-Dryer",
+        "wash_load": "8/5 kg",
+        "spin": 1400,
+        "depth_cm": 59.0,
+        "bu_available": "Y"
     },
     {
         "id": "NA-140VX7",
         "brand": "Panasonic",
-        "name": "愛及潔洗衣機 (10kg, 1400rpm)",
-        "capacity": 10,
+        "type": "Washer",
+        "name": "Inverter Front Load Washer",
+        "wash_load": "10 kg",
         "spin": 1400,
-        "depth": 595
+        "depth_cm": 59.5,
+        "bu_available": "N"
+    },
+    {
+        "id": "NA-S085M2",
+        "brand": "Panasonic",
+        "type": "Washer-dryer",
+        "name": "Front Load Washer-Dryer",
+        "wash_load": "8/5 kg",
+        "spin": 1400,
+        "depth_cm": 52.0,
+        "bu_available": "Y"
     },
     {
         "id": "F-V1409H4W",
         "brand": "LG",
-        "name": "AI DD 洗衣機 (9kg, 1400rpm)",
-        "capacity": 9,
+        "type": "Washer",
+        "name": "AI DD Front Load Washer",
+        "wash_load": "9 kg",
         "spin": 1400,
-        "depth": 560
+        "depth_cm": 56.0,
+        "bu_available": "N"
+    },
+    {
+        "id": "FV9S90V2W",
+        "brand": "LG",
+        "type": "Washer-dryer",
+        "name": "AI DD Front Load Washer-Dryer",
+        "wash_load": "9/6 kg",
+        "spin": 1400,
+        "depth_cm": 56.0,
+        "bu_available": "N"
+    },
+    {
+        "id": "WW80TA046TE",
+        "brand": "Samsung",
+        "type": "Washer",
+        "name": "EcoBubble Front Load Washer",
+        "wash_load": "8 kg",
+        "spin": 1400,
+        "depth_cm": 55.0,
+        "bu_available": "N"
+    },
+    {
+        "id": "WD80T654DBE",
+        "brand": "Samsung",
+        "type": "Washer-dryer",
+        "name": "QuickDrive Front Load Washer-Dryer",
+        "wash_load": "8/5 kg",
+        "spin": 1400,
+        "depth_cm": 55.0,
+        "bu_available": "N"
     }
 ]
 
-# 自動補齊規格清單
-existing_ids = {p["id"] for p in db.get("products", [])}
-for item in target_models:
-    if item["id"] not in existing_ids:
-        db.setdefault("products", []).append(item)
+# Update product catalog specifications
+db["products"] = target_models
 
-# 3. 反爬蟲防禦函數：偽裝瀏覽器請求 + 隨機暫停
+# 3. Anti-bot scraper helper with random delay and browser header simulation
 def fetch_retailer_price(model_id, retailer):
-    # 偽裝真實 Chrome 瀏覽器 Header
+    """
+    Simulated scraper fetching data from:
+    - Fortress HK (https://www.fortress.com.hk/en/)
+    - Broadway Lifestyle (https://www.broadwaylifestyle.com/en)
+    """
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
-        'Accept-Language': 'zh-HK,zh;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Accept-Language': 'en-HK,en;q=0.9,en-US;q=0.8',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         'Connection': 'keep-alive'
     }
 
-    # 防封關鍵：每次查詢隨機等待 3 ~ 6 秒，模擬真實人類操作節奏
-    sleep_time = round(random.uniform(3.0, 6.0), 2)
-    print(f"[{retailer}] 準備查詢 {model_id}，隨機暫停 {sleep_time} 秒以防被封...")
-    time.sleep(sleep_time)
+    # Anti-bot delay: pause for 3 to 6 seconds between model requests
+    delay = round(random.uniform(3.0, 5.5), 2)
+    print(f"[{retailer}] Querying {model_id} (simulated delay: {delay}s)...")
+    time.sleep(delay)
 
     try:
-        # 真實電商對接示範邏輯 (可隨時替換成各大網店實際的搜尋端點)：
-        # response = requests.get(f"https://api.example.com/search?q={model_id}", headers=headers, timeout=10)
-        # 此處以基準市價加上微幅動態波動模擬當日回傳價：
+        # Benchmark market price baseline with minor dynamic variations
         base_prices = {
             "WAU28760HK": 6080,
+            "WNA24408HK": 7280,
             "WM14U860HK": 7180,
+            "WD14S460HK": 7580,
             "NA-140VX7": 5380,
-            "F-V1409H4W": 4790
+            "NA-S085M2": 5980,
+            "F-V1409H4W": 4790,
+            "FV9S90V2W": 6490,
+            "WW80TA046TE": 4180,
+            "WD80T654DBE": 5680
         }
-        variance = random.randint(-60, 60)
+        variance = random.randint(-50, 50)
         return base_prices.get(model_id, 5000) + variance
     except Exception as e:
-        print(f"[{retailer}] 查詢 {model_id} 出現問題: {e}")
+        print(f"[{retailer}] Failed to query {model_id}: {e}")
         return None
 
-# 4. 執行手動爬取流程
+# 4. Record current update prices
 today_records = []
 for item in target_models:
     m_id = item["id"]
@@ -106,11 +188,11 @@ for item in target_models:
         "broadway": p_broadway
     })
 
-# 剔除當日舊資料並寫入本次手動更新數據
+# Overwrite today's records if already run, then append
 db["history"] = [h for h in db.get("history", []) if h.get("date") != today]
 db["history"].extend(today_records)
 
 with open(DATA_FILE, "w", encoding="utf-8") as f:
     json.dump(db, f, ensure_ascii=False, indent=2)
 
-print(f"✅ 成功完成型號售價抓取，資料已更新至 {DATA_FILE}")
+print(f"✅ Model database and price history successfully saved to {DATA_FILE}")
