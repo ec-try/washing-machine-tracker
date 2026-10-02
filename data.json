@@ -4,7 +4,7 @@
       "id": "WS12S467HK",
       "brand": "Siemens",
       "type": "Washer",
-      "name": "iQ300 7KG 1200RPM Front Load Washer",
+      "name": "iQ300 7kg 1200rpm Slim Washer",
       "wash_load": "7 kg",
       "spin": 1200,
       "depth_cm": 47.0,
@@ -14,7 +14,7 @@
       "id": "WS14S468HK",
       "brand": "Siemens",
       "type": "Washer",
-      "name": "iQ300 8KG 1400RPM Front Load Washer",
+      "name": "iQ300 8kg 1400rpm Slim Washer",
       "wash_load": "8 kg",
       "spin": 1400,
       "depth_cm": 47.0,
@@ -24,7 +24,7 @@
       "id": "WS12S4B5HK",
       "brand": "Siemens",
       "type": "Washer",
-      "name": "iQ300 8KG 1200RPM Front Load Washer (Silver)",
+      "name": "iQ300 8kg 1200rpm Washer (Silver)",
       "wash_load": "8 kg",
       "spin": 1200,
       "depth_cm": 47.0,
@@ -34,7 +34,7 @@
       "id": "WS14S4B8HK",
       "brand": "Siemens",
       "type": "Washer",
-      "name": "iQ300 8KG 1400RPM Front Load Washer (Built-under)",
+      "name": "iQ300 8kg 1400rpm Built-under Washer",
       "wash_load": "8 kg",
       "spin": 1400,
       "depth_cm": 47.0,
@@ -44,28 +44,228 @@
       "id": "WH43E200HK",
       "brand": "Siemens",
       "type": "Washer",
-      "name": "iQ300 9KG 1300RPM Slimline Front Load Washer",
+      "name": "iQ300 9kg 1300rpm Slim Washer",
       "wash_load": "9 kg",
       "spin": 1300,
       "depth_cm": 49.0,
       "bu_available": "Y"
     },
     {
-      "id": "WD14S469HK",
+      "id": "WG44G201HK",
       "brand": "Siemens",
-      "type": "Washer-dryer",
-      "name": "iQ300 8/5KG 1400RPM Slimline Washer Dryer",
-      "wash_load": "8/5 kg",
+      "type": "Washer",
+      "name": "iQ500 9kg 1400rpm Front Load Washer",
+      "wash_load": "9 kg",
       "spin": 1400,
-      "depth_cm": 47.0,
+      "depth_cm": 59.0,
       "bu_available": "Y"
     },
     {
-      "id": "WD14S468HK",
+      "id": "WG44G208HK",
       "brand": "Siemens",
-      "type": "Washer-dryer",
-      "name": "iQ300 8/5KG 1400RPM Washer Dryer",
-      "wash_load": "8/5 kg",
+      "type": "Washer",
+      "name": "iQ500 9kg 1400rpm Washer Silver",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WG54G2A0HK",
+      "brand": "Siemens",
+      "type": "Washer",
+      "name": "iQ500 10kg 1400rpm i-Dos Washer",
+      "wash_load": "10 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WM12N260HK",
+      "brand": "Siemens",
+      "type": "Washer",
+      "name": "iQ300 8kg 1200rpm Inverter Washer",
+      "wash_load": "8 kg",
+      "spin": 1200,
+      "depth_cm": 55.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WM14U940HK",
+      "brand": "Siemens",
+      "type": "Washer",
+      "name": "iQ700 10kg 1400rpm Avantgarde Washer",
+      "wash_load": "10 kg",
+      "spin": 1400,
+      "depth_cm": 60.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WM14V890HK",
+      "brand": "Siemens",
+      "type": "Washer",
+      "name": "iQ800 9kg 1400rpm Premium Washer",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WG52A200HK",
+      "brand": "Siemens",
+      "type": "Washer",
+      "name": "iQ500 10kg 1200rpm SpeedPack Washer",
+      "wash_load": "10 kg",
+      "spin": 1200,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WM14U860HK",
+      "brand": "Siemens",
+      "type": "Washer",
+      "name": "iQ500 10kg 1400rpm Washer",
+      "wash_load": "10 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WS10G160HK",
+      "brand": "Siemens",
+      "type": "Washer",
+      "name": "iQ100 6kg 1000rpm Compact Washer",
+      "wash_load": "6 kg",
+      "spin": 1000,
+      "depth_cm": 45.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WGG24401HK",
+      "brand": "Bosch",
+      "type": "Washer",
+      "name": "Serie 4 9kg 1400rpm Front Load Washer",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WGG24408HK",
+      "brand": "Bosch",
+      "type": "Washer",
+      "name": "Serie 4 9kg 1400rpm Washer Silver",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WGG254A0HK",
+      "brand": "Bosch",
+      "type": "Washer",
+      "name": "Serie 6 10kg 1400rpm i-DOS Washer",
+      "wash_load": "10 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WGA14200HK",
+      "brand": "Bosch",
+      "type": "Washer",
+      "name": "Serie 4 9kg 1200rpm Compact Washer",
+      "wash_load": "9 kg",
+      "spin": 1200,
+      "depth_cm": 58.8,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WAJ20170HK",
+      "brand": "Bosch",
+      "type": "Washer",
+      "name": "Serie 2 7kg 1000rpm Front Load Washer",
+      "wash_load": "7 kg",
+      "spin": 1000,
+      "depth_cm": 55.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WAV28M20HK",
+      "brand": "Bosch",
+      "type": "Washer",
+      "name": "Serie 8 9kg 1400rpm AntiStain Washer",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WAU28760HK",
+      "brand": "Bosch",
+      "type": "Washer",
+      "name": "Serie 6 9kg 1400rpm EcoSilence Washer",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WGG04200HK",
+      "brand": "Bosch",
+      "type": "Washer",
+      "name": "Serie 4 8kg 1200rpm Washer",
+      "wash_load": "8 kg",
+      "spin": 1200,
+      "depth_cm": 55.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WGG04409HK",
+      "brand": "Bosch",
+      "type": "Washer",
+      "name": "Serie 4 8kg 1400rpm Washer Dark Silver",
+      "wash_load": "8 kg",
+      "spin": 1400,
+      "depth_cm": 55.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WGA254A0HK",
+      "brand": "Bosch",
+      "type": "Washer",
+      "name": "Serie 6 10kg 1400rpm AntiAllergy Washer",
+      "wash_load": "10 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WGB244A0HK",
+      "brand": "Bosch",
+      "type": "Washer",
+      "name": "Serie 8 9kg 1400rpm Home Connect Washer",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WLR24461HK",
+      "brand": "Bosch",
+      "type": "Washer",
+      "name": "Serie 4 7kg 1200rpm Slim Washer",
+      "wash_load": "7 kg",
+      "spin": 1200,
+      "depth_cm": 45.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WLS24468HK",
+      "brand": "Bosch",
+      "type": "Washer",
+      "name": "Serie 4 8kg 1400rpm Slim Inverter Washer",
+      "wash_load": "8 kg",
       "spin": 1400,
       "depth_cm": 47.0,
       "bu_available": "Y"
@@ -74,7 +274,7 @@
       "id": "FVBS70W2B",
       "brand": "LG",
       "type": "Washer",
-      "name": "7KG 1200RPM Front Load Washer",
+      "name": "7kg 1200rpm Front Load Washer",
       "wash_load": "7 kg",
       "spin": 1200,
       "depth_cm": 47.5,
@@ -84,7 +284,7 @@
       "id": "FVBS90W2G",
       "brand": "LG",
       "type": "Washer",
-      "name": "9KG 1200RPM Front Load Washer",
+      "name": "9kg 1200rpm Front Load Washer",
       "wash_load": "9 kg",
       "spin": 1200,
       "depth_cm": 53.5,
@@ -111,70 +311,120 @@
       "bu_available": "N"
     },
     {
-      "id": "FVBA70GW2G",
+      "id": "FV7490V2W",
       "brand": "LG",
-      "type": "Washer-dryer",
-      "name": "7/4KG 1200RPM Washer Dryer (Built-under)",
-      "wash_load": "7/4 kg",
+      "type": "Washer",
+      "name": "AI DD 9kg 1400rpm Front Load Washer",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 56.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "FV7490V2B",
+      "brand": "LG",
+      "type": "Washer",
+      "name": "AI DD 9kg 1400rpm Washer (Black Steel)",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 56.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "FV5080W3",
+      "brand": "LG",
+      "type": "Washer",
+      "name": "Slim AI DD 8kg 1200rpm Washer",
+      "wash_load": "8 kg",
       "spin": 1200,
       "depth_cm": 47.5,
-      "bu_available": "Y"
-    },
-    {
-      "id": "FVBA70M2G",
-      "brand": "LG",
-      "type": "Washer-dryer",
-      "name": "7/4KG 1200RPM Washer Dryer (Built-under) Black",
-      "wash_load": "7/4 kg",
-      "spin": 1200,
-      "depth_cm": 47.5,
-      "bu_available": "Y"
-    },
-    {
-      "id": "FV9AE90W2",
-      "brand": "LG",
-      "type": "Washer-dryer",
-      "name": "Vivace 9/5KG 1200RPM Washer Dryer",
-      "wash_load": "9/5 kg",
-      "spin": 1200,
-      "depth_cm": 53.5,
       "bu_available": "N"
     },
     {
-      "id": "FV9AE90B2",
+      "id": "FV9A13W2",
       "brand": "LG",
-      "type": "Washer-dryer",
-      "name": "Vivace 9/5KG 1200RPM Washer Dryer (Black Steel)",
-      "wash_load": "9/5 kg",
-      "spin": 1200,
-      "depth_cm": 53.5,
-      "bu_available": "N"
-    },
-    {
-      "id": "FX4A12ES2",
-      "brand": "LG",
-      "type": "Washer-dryer",
-      "name": "12kg/7kg 2in1 Washer & Dryer",
-      "wash_load": "12/7 kg",
-      "spin": 1200,
-      "depth_cm": 58.0,
-      "bu_available": "N"
-    },
-    {
-      "id": "FX9U12GW2",
-      "brand": "LG",
-      "type": "Washer-dryer",
-      "name": "12kg/7kg WashCombo AI HeatPump Washer Dryer",
-      "wash_load": "12/7 kg",
-      "spin": 1200,
+      "type": "Washer",
+      "name": "AI DD 13kg 1400rpm Big Load Washer",
+      "wash_load": "13 kg",
+      "spin": 1400,
       "depth_cm": 61.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "FV7480W2",
+      "brand": "LG",
+      "type": "Washer",
+      "name": "AI DD 8kg 1400rpm Steam Washer",
+      "wash_load": "8 kg",
+      "spin": 1400,
+      "depth_cm": 56.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "FV5090W2",
+      "brand": "LG",
+      "type": "Washer",
+      "name": "9kg 1200rpm Inverter DD Washer",
+      "wash_load": "9 kg",
+      "spin": 1200,
+      "depth_cm": 56.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "FV9A11W2",
+      "brand": "LG",
+      "type": "Washer",
+      "name": "TurboWash 360 11kg Washer",
+      "wash_load": "11 kg",
+      "spin": 1400,
+      "depth_cm": 61.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "FX2S90W2",
+      "brand": "LG",
+      "type": "Washer",
+      "name": "AI DD 9kg Slimline Washer",
+      "wash_load": "9 kg",
+      "spin": 1200,
+      "depth_cm": 47.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "FX3S10B2",
+      "brand": "LG",
+      "type": "Washer",
+      "name": "AI DD 10kg Inox Black Washer",
+      "wash_load": "10 kg",
+      "spin": 1400,
+      "depth_cm": 56.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "FV5490W2",
+      "brand": "LG",
+      "type": "Washer",
+      "name": "AI Direct Drive 9kg Washer",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 56.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "FV7080W2",
+      "brand": "LG",
+      "type": "Washer",
+      "name": "Steam 8kg Inverter Washer",
+      "wash_load": "8 kg",
+      "spin": 1200,
+      "depth_cm": 47.5,
       "bu_available": "N"
     },
     {
       "id": "TW-T21BU80UWH",
       "brand": "Toshiba",
       "type": "Washer",
-      "name": "MG 7KG 1200RPM Ultra Slim Front Load Washer",
+      "name": "MG 7kg 1200rpm Ultra Slim Washer",
       "wash_load": "7 kg",
       "spin": 1200,
       "depth_cm": 44.0,
@@ -184,17 +434,857 @@
       "id": "TW-T22BU95UWH",
       "brand": "Toshiba",
       "type": "Washer",
-      "name": "WK-B 8.5KG 1400RPM 470mm Ultra Slim Washer (Built-under)",
+      "name": "WK-B 8.5kg 1400rpm Ultra Slim Washer",
       "wash_load": "8.5 kg",
       "spin": 1400,
       "depth_cm": 47.0,
       "bu_available": "Y"
     },
     {
+      "id": "TW-BL80A2H",
+      "brand": "Toshiba",
+      "type": "Washer",
+      "name": "The GreatWaves 7kg 1200rpm Washer",
+      "wash_load": "7 kg",
+      "spin": 1200,
+      "depth_cm": 49.5,
+      "bu_available": "Y"
+    },
+    {
+      "id": "TW-BL90A4H",
+      "brand": "Toshiba",
+      "type": "Washer",
+      "name": "The GreatWaves 8kg 1400rpm Washer",
+      "wash_load": "8 kg",
+      "spin": 1400,
+      "depth_cm": 53.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "TW-BL100A4H",
+      "brand": "Toshiba",
+      "type": "Washer",
+      "name": "The GreatWaves 9kg 1400rpm Washer",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 59.5,
+      "bu_available": "Y"
+    },
+    {
+      "id": "TW-BK90S2H",
+      "brand": "Toshiba",
+      "type": "Washer",
+      "name": "Real INVERTER 8kg Slim Washer",
+      "wash_load": "8 kg",
+      "spin": 1200,
+      "depth_cm": 47.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "TW-BK100S2H",
+      "brand": "Toshiba",
+      "type": "Washer",
+      "name": "Real INVERTER 9kg Washer",
+      "wash_load": "9 kg",
+      "spin": 1200,
+      "depth_cm": 53.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "TW-127XP2H",
+      "brand": "Toshiba",
+      "type": "Washer",
+      "name": "ZABOON Flagship 12kg Inverter Washer",
+      "wash_load": "12 kg",
+      "spin": 1400,
+      "depth_cm": 60.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "TW-BH85S2H",
+      "brand": "Toshiba",
+      "type": "Washer",
+      "name": "Ultra Slim 7.5kg 1200rpm Washer",
+      "wash_load": "7.5 kg",
+      "spin": 1200,
+      "depth_cm": 44.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "TW-T25BU10UWH",
+      "brand": "Toshiba",
+      "type": "Washer",
+      "name": "10kg 1400rpm SteamCare Washer",
+      "wash_load": "10 kg",
+      "spin": 1400,
+      "depth_cm": 58.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "TW-BL110A4H",
+      "brand": "Toshiba",
+      "type": "Washer",
+      "name": "The GreatWaves 10kg Washer",
+      "wash_load": "10 kg",
+      "spin": 1400,
+      "depth_cm": 59.5,
+      "bu_available": "Y"
+    },
+    {
+      "id": "TW-BK80S2H",
+      "brand": "Toshiba",
+      "type": "Washer",
+      "name": "7.5kg 1200rpm Slim Washer",
+      "wash_load": "7.5 kg",
+      "spin": 1200,
+      "depth_cm": 47.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WW90T554DAN",
+      "brand": "Samsung",
+      "type": "Washer",
+      "name": "EcoBubble 9kg 1400rpm Washer",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 55.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WW80TA046TE",
+      "brand": "Samsung",
+      "type": "Washer",
+      "name": "Hygiene Steam 8kg 1400rpm Washer",
+      "wash_load": "8 kg",
+      "spin": 1400,
+      "depth_cm": 55.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WW10T654DLH",
+      "brand": "Samsung",
+      "type": "Washer",
+      "name": "AI Control 10.5kg 1400rpm Washer",
+      "wash_load": "10.5 kg",
+      "spin": 1400,
+      "depth_cm": 60.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WW70TA026TE",
+      "brand": "Samsung",
+      "type": "Washer",
+      "name": "EcoBubble 7kg 1200rpm Washer",
+      "wash_load": "7 kg",
+      "spin": 1200,
+      "depth_cm": 55.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WW90T654DLN",
+      "brand": "Samsung",
+      "type": "Washer",
+      "name": "AI Control 9kg 1400rpm Washer",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 55.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WW80T554DAX",
+      "brand": "Samsung",
+      "type": "Washer",
+      "name": "EcoBubble Inox Black 8kg Washer",
+      "wash_load": "8 kg",
+      "spin": 1400,
+      "depth_cm": 55.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WW12TP94DSB",
+      "brand": "Samsung",
+      "type": "Washer",
+      "name": "QuickDrive 12kg 1400rpm Washer",
+      "wash_load": "12 kg",
+      "spin": 1400,
+      "depth_cm": 60.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WW85T4040CE",
+      "brand": "Samsung",
+      "type": "Washer",
+      "name": "Digital Inverter 8.5kg Washer",
+      "wash_load": "8.5 kg",
+      "spin": 1400,
+      "depth_cm": 55.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WW70T3020WW",
+      "brand": "Samsung",
+      "type": "Washer",
+      "name": "Quick Wash 7kg 1200rpm Washer",
+      "wash_load": "7 kg",
+      "spin": 1200,
+      "depth_cm": 45.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WW90TA046AE",
+      "brand": "Samsung",
+      "type": "Washer",
+      "name": "Hygiene Steam 9kg 1400rpm Washer",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 55.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WW10TP44DSX",
+      "brand": "Samsung",
+      "type": "Washer",
+      "name": "AI Pattern 10.5kg Inox Washer",
+      "wash_load": "10.5 kg",
+      "spin": 1400,
+      "depth_cm": 60.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WW80TA026TE",
+      "brand": "Samsung",
+      "type": "Washer",
+      "name": "EcoBubble 8kg 1200rpm Washer",
+      "wash_load": "8 kg",
+      "spin": 1200,
+      "depth_cm": 55.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "NA-140VX7",
+      "brand": "Panasonic",
+      "type": "Washer",
+      "name": "ActiveFoam 10kg 1400rpm Washer",
+      "wash_load": "10 kg",
+      "spin": 1400,
+      "depth_cm": 59.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "NA-128XB1",
+      "brand": "Panasonic",
+      "type": "Washer",
+      "name": "Slim Inverter 8kg 1200rpm Washer",
+      "wash_load": "8 kg",
+      "spin": 1200,
+      "depth_cm": 52.7,
+      "bu_available": "Y"
+    },
+    {
+      "id": "NA-127XB1",
+      "brand": "Panasonic",
+      "type": "Washer",
+      "name": "Ultra-Slim 7kg 1200rpm Washer",
+      "wash_load": "7 kg",
+      "spin": 1200,
+      "depth_cm": 44.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "NA-148VG6",
+      "brand": "Panasonic",
+      "type": "Washer",
+      "name": "ECONAVI 8kg 1400rpm Washer",
+      "wash_load": "8 kg",
+      "spin": 1400,
+      "depth_cm": 55.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "NA-149VG6",
+      "brand": "Panasonic",
+      "type": "Washer",
+      "name": "ECONAVI 9kg 1400rpm Washer",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 55.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "NA-120VG6",
+      "brand": "Panasonic",
+      "type": "Washer",
+      "name": "Inverter 10kg 1200rpm Washer",
+      "wash_load": "10 kg",
+      "spin": 1200,
+      "depth_cm": 59.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "NA-140VG4",
+      "brand": "Panasonic",
+      "type": "Washer",
+      "name": "HydroActive 10kg 1400rpm Washer",
+      "wash_load": "10 kg",
+      "spin": 1400,
+      "depth_cm": 59.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "NA-128MB1",
+      "brand": "Panasonic",
+      "type": "Washer",
+      "name": "8kg 1200rpm Front Load Washer",
+      "wash_load": "8 kg",
+      "spin": 1200,
+      "depth_cm": 52.7,
+      "bu_available": "Y"
+    },
+    {
+      "id": "NA-126XB1",
+      "brand": "Panasonic",
+      "type": "Washer",
+      "name": "Compact 6kg 1200rpm Washer",
+      "wash_load": "6 kg",
+      "spin": 1200,
+      "depth_cm": 44.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "NA-148VX6",
+      "brand": "Panasonic",
+      "type": "Washer",
+      "name": "StainMaster+ 8kg 1400rpm Washer",
+      "wash_load": "8 kg",
+      "spin": 1400,
+      "depth_cm": 55.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "FFCR80120",
+      "brand": "Whirlpool",
+      "type": "Washer",
+      "name": "FreshCare+ 8kg 1200rpm Washer",
+      "wash_load": "8 kg",
+      "spin": 1200,
+      "depth_cm": 57.5,
+      "bu_available": "Y"
+    },
+    {
+      "id": "FFCR90420",
+      "brand": "Whirlpool",
+      "type": "Washer",
+      "name": "FreshCare+ 9kg 1400rpm Washer",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 63.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "FFCR70120",
+      "brand": "Whirlpool",
+      "type": "Washer",
+      "name": "FreshCare+ 7kg 1200rpm Washer",
+      "wash_load": "7 kg",
+      "spin": 1200,
+      "depth_cm": 54.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "FWG81284W",
+      "brand": "Whirlpool",
+      "type": "Washer",
+      "name": "6th Sense 8kg 1200rpm Washer",
+      "wash_load": "8 kg",
+      "spin": 1200,
+      "depth_cm": 57.5,
+      "bu_available": "Y"
+    },
+    {
+      "id": "FWG91484W",
+      "brand": "Whirlpool",
+      "type": "Washer",
+      "name": "6th Sense 9kg 1400rpm Washer",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 63.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "FFCR10420",
+      "brand": "Whirlpool",
+      "type": "Washer",
+      "name": "FreshCare+ 10kg 1400rpm Washer",
+      "wash_load": "10 kg",
+      "spin": 1400,
+      "depth_cm": 64.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "FWG71284W",
+      "brand": "Whirlpool",
+      "type": "Washer",
+      "name": "FreshCare 7kg 1200rpm Washer",
+      "wash_load": "7 kg",
+      "spin": 1200,
+      "depth_cm": 54.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WFB8514GW",
+      "brand": "Whirlpool",
+      "type": "Washer",
+      "name": "SupremeCare 8.5kg Washer",
+      "wash_load": "8.5 kg",
+      "spin": 1400,
+      "depth_cm": 57.5,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WFB9514GW",
+      "brand": "Whirlpool",
+      "type": "Washer",
+      "name": "SupremeCare 9.5kg Washer",
+      "wash_load": "9.5 kg",
+      "spin": 1400,
+      "depth_cm": 63.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "FFCR80140",
+      "brand": "Whirlpool",
+      "type": "Washer",
+      "name": "Zen Inverter 8kg 1400rpm Washer",
+      "wash_load": "8 kg",
+      "spin": 1400,
+      "depth_cm": 57.5,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WCA020",
+      "brand": "Miele",
+      "type": "Washer",
+      "name": "W1 Classic 7kg 1400rpm Front Washer",
+      "wash_load": "7 kg",
+      "spin": 1400,
+      "depth_cm": 63.6,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WCD120",
+      "brand": "Miele",
+      "type": "Washer",
+      "name": "W1 Lotus White 8kg 1400rpm Washer",
+      "wash_load": "8 kg",
+      "spin": 1400,
+      "depth_cm": 63.6,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WCI860",
+      "brand": "Miele",
+      "type": "Washer",
+      "name": "W1 TwinDos 9kg 1600rpm Washer",
+      "wash_load": "9 kg",
+      "spin": 1600,
+      "depth_cm": 64.3,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WCR860",
+      "brand": "Miele",
+      "type": "Washer",
+      "name": "W1 QuickPowerWash 9kg 1600rpm Washer",
+      "wash_load": "9 kg",
+      "spin": 1600,
+      "depth_cm": 64.3,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WWG660",
+      "brand": "Miele",
+      "type": "Washer",
+      "name": "W1 TwinDos 9kg 1400rpm Washer",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 64.3,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WWD120",
+      "brand": "Miele",
+      "type": "Washer",
+      "name": "W1 DirectSensor 8kg 1400rpm Washer",
+      "wash_load": "8 kg",
+      "spin": 1400,
+      "depth_cm": 63.6,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WCA030",
+      "brand": "Miele",
+      "type": "Washer",
+      "name": "W1 Classic WaterControl 7kg Washer",
+      "wash_load": "7 kg",
+      "spin": 1400,
+      "depth_cm": 63.6,
+      "bu_available": "Y"
+    },
+    {
+      "id": "EWF8024D3WB",
+      "brand": "Electrolux",
+      "type": "Washer",
+      "name": "UltimateCare 300 8kg Front Washer",
+      "wash_load": "8 kg",
+      "spin": 1200,
+      "depth_cm": 50.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "EWF9024D3WB",
+      "brand": "Electrolux",
+      "type": "Washer",
+      "name": "UltimateCare 300 9kg Front Washer",
+      "wash_load": "9 kg",
+      "spin": 1200,
+      "depth_cm": 55.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "EWF9042R7WB",
+      "brand": "Electrolux",
+      "type": "Washer",
+      "name": "UltimateCare 700 SensorWash 9kg",
+      "wash_load": "9 kg",
+      "spin": 1400,
+      "depth_cm": 65.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "EWF1042R7WB",
+      "brand": "Electrolux",
+      "type": "Washer",
+      "name": "UltimateCare 700 10kg Washer",
+      "wash_load": "10 kg",
+      "spin": 1400,
+      "depth_cm": 65.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "EWF7024D3WB",
+      "brand": "Electrolux",
+      "type": "Washer",
+      "name": "UltimateCare 300 7kg Washer",
+      "wash_load": "7 kg",
+      "spin": 1200,
+      "depth_cm": 48.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "EWF8024P5WB",
+      "brand": "Electrolux",
+      "type": "Washer",
+      "name": "UltimateCare 500 8kg Washer",
+      "wash_load": "8 kg",
+      "spin": 1200,
+      "depth_cm": 50.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "ZWF8045D2WA",
+      "brand": "Zanussi",
+      "type": "Washer",
+      "name": "AutoWash 8kg 1400rpm Washer",
+      "wash_load": "8 kg",
+      "spin": 1400,
+      "depth_cm": 54.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "ZWF7025D2WA",
+      "brand": "Zanussi",
+      "type": "Washer",
+      "name": "AutoWash 7kg 1200rpm Washer",
+      "wash_load": "7 kg",
+      "spin": 1200,
+      "depth_cm": 49.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "PW8141",
+      "brand": "Philco",
+      "type": "Washer",
+      "name": "Inverter 8kg 1400rpm Washer",
+      "wash_load": "8 kg",
+      "spin": 1400,
+      "depth_cm": 52.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "RO1486DWHC7",
+      "brand": "Candy",
+      "type": "Washer",
+      "name": "RapidO 8kg 1400rpm Smart Washer",
+      "wash_load": "8 kg",
+      "spin": 1400,
+      "depth_cm": 52.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WD14S469HK",
+      "brand": "Siemens",
+      "type": "Washer-dryer",
+      "name": "iQ300 8/5kg 1400rpm Slimline Washer Dryer",
+      "wash_load": "8/5 kg",
+      "spin": 1400,
+      "depth_cm": 47.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WD14S468HK",
+      "brand": "Siemens",
+      "type": "Washer-dryer",
+      "name": "iQ300 8/5kg 1400rpm Washer Dryer",
+      "wash_load": "8/5 kg",
+      "spin": 1400,
+      "depth_cm": 47.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WN44A2X0HK",
+      "brand": "Siemens",
+      "type": "Washer-dryer",
+      "name": "iQ500 9/6kg 1400rpm Washer Dryer",
+      "wash_load": "9/6 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WN34A1U1HK",
+      "brand": "Siemens",
+      "type": "Washer-dryer",
+      "name": "iQ300 8/5kg 1400rpm Washer Dryer",
+      "wash_load": "8/5 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WD14U5C0HK",
+      "brand": "Siemens",
+      "type": "Washer-dryer",
+      "name": "iQ700 10/6kg 1400rpm Washer Dryer",
+      "wash_load": "10/6 kg",
+      "spin": 1400,
+      "depth_cm": 62.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WD14S460HK",
+      "brand": "Siemens",
+      "type": "Washer-dryer",
+      "name": "iQ500 8/5kg Compact Combo",
+      "wash_load": "8/5 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WD14H420HK",
+      "brand": "Siemens",
+      "type": "Washer-dryer",
+      "name": "iQ500 7/4kg AirCondensation Combo",
+      "wash_load": "7/4 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WD15H540HK",
+      "brand": "Siemens",
+      "type": "Washer-dryer",
+      "name": "iQ700 7/4kg Washer Dryer",
+      "wash_load": "7/4 kg",
+      "spin": 1500,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WNA14400HK",
+      "brand": "Bosch",
+      "type": "Washer-dryer",
+      "name": "Serie 4 9/6kg 1400rpm Washer Dryer",
+      "wash_load": "9/6 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WNA24408HK",
+      "brand": "Bosch",
+      "type": "Washer-dryer",
+      "name": "Serie 4 9/6kg Washer Dryer Silver",
+      "wash_load": "9/6 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WDU28561HK",
+      "brand": "Bosch",
+      "type": "Washer-dryer",
+      "name": "Serie 6 10/6kg Hybrid Washer Dryer",
+      "wash_load": "10/6 kg",
+      "spin": 1400,
+      "depth_cm": 62.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WNG254U0HK",
+      "brand": "Bosch",
+      "type": "Washer-dryer",
+      "name": "Serie 6 10/6kg AutoDry Washer Dryer",
+      "wash_load": "10/6 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WDU28560HK",
+      "brand": "Bosch",
+      "type": "Washer-dryer",
+      "name": "Serie 6 10/6kg Washer Dryer",
+      "wash_load": "10/6 kg",
+      "spin": 1400,
+      "depth_cm": 62.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WNA13400HK",
+      "brand": "Bosch",
+      "type": "Washer-dryer",
+      "name": "Serie 4 8/5kg Washer Dryer",
+      "wash_load": "8/5 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WVH28420HK",
+      "brand": "Bosch",
+      "type": "Washer-dryer",
+      "name": "Serie 6 7/4kg AirCondensation Combo",
+      "wash_load": "7/4 kg",
+      "spin": 1400,
+      "depth_cm": 59.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "FVBA70GW2G",
+      "brand": "LG",
+      "type": "Washer-dryer",
+      "name": "7/4kg 1200rpm Washer Dryer Built-under",
+      "wash_load": "7/4 kg",
+      "spin": 1200,
+      "depth_cm": 47.5,
+      "bu_available": "Y"
+    },
+    {
+      "id": "FVBA70M2G",
+      "brand": "LG",
+      "type": "Washer-dryer",
+      "name": "7/4kg 1200rpm Washer Dryer Black Steel",
+      "wash_load": "7/4 kg",
+      "spin": 1200,
+      "depth_cm": 47.5,
+      "bu_available": "Y"
+    },
+    {
+      "id": "FV9AE90W2",
+      "brand": "LG",
+      "type": "Washer-dryer",
+      "name": "Vivace 9/5kg 1200rpm Washer Dryer",
+      "wash_load": "9/5 kg",
+      "spin": 1200,
+      "depth_cm": 53.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "FV9AE90B2",
+      "brand": "LG",
+      "type": "Washer-dryer",
+      "name": "Vivace 9/5kg Washer Dryer (Black Steel)",
+      "wash_load": "9/5 kg",
+      "spin": 1200,
+      "depth_cm": 53.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "FX4A12ES2",
+      "brand": "LG",
+      "type": "Washer-dryer",
+      "name": "12/7kg 2in1 Washer & Dryer",
+      "wash_load": "12/7 kg",
+      "spin": 1200,
+      "depth_cm": 58.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "FX9U12GW2",
+      "brand": "LG",
+      "type": "Washer-dryer",
+      "name": "12/7kg WashCombo AI HeatPump Dryer",
+      "wash_load": "12/7 kg",
+      "spin": 1200,
+      "depth_cm": 61.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "FV9S90V2W",
+      "brand": "LG",
+      "type": "Washer-dryer",
+      "name": "TurboWash 360 9/6kg Washer Dryer",
+      "wash_load": "9/6 kg",
+      "spin": 1400,
+      "depth_cm": 56.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "FV7950S2W",
+      "brand": "LG",
+      "type": "Washer-dryer",
+      "name": "Slim AI DD 8.5/5kg Washer Dryer",
+      "wash_load": "8.5/5 kg",
+      "spin": 1200,
+      "depth_cm": 47.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "FV9411D4",
+      "brand": "LG",
+      "type": "Washer-dryer",
+      "name": "Steam+ 11/7kg Washer Dryer Combo",
+      "wash_load": "11/7 kg",
+      "spin": 1400,
+      "depth_cm": 61.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "FV7905W2",
+      "brand": "LG",
+      "type": "Washer-dryer",
+      "name": "AI DD 8.5/5kg Slim Combo",
+      "wash_load": "8.5/5 kg",
+      "spin": 1200,
+      "depth_cm": 47.5,
+      "bu_available": "N"
+    },
+    {
       "id": "TWD-BN90GF4H",
       "brand": "Toshiba",
       "type": "Washer-dryer",
-      "name": "WK 8/5KG 1400RPM 470mm Ultra Slim Washer Dryer",
+      "name": "WK 8/5kg 1400rpm Ultra Slim Combo",
       "wash_load": "8/5 kg",
       "spin": 1400,
       "depth_cm": 47.0,
@@ -204,7 +1294,7 @@
       "id": "TWD-T21BU95UWH",
       "brand": "Toshiba",
       "type": "Washer-dryer",
-      "name": "WW 8.5/6KG 1400RPM Ultra Slim Washer Dryer",
+      "name": "WW 8.5/6kg 1400rpm Ultra Slim Combo",
       "wash_load": "8.5/6 kg",
       "spin": 1400,
       "depth_cm": 47.0,
@@ -214,37 +1304,237 @@
       "id": "TWD-T22BU95UWH",
       "brand": "Toshiba",
       "type": "Washer-dryer",
-      "name": "WK-B 8.5/6KG 1400RPM Ultra Slim Washer Dryer (Built-under)",
+      "name": "WK-B 8.5/6kg 1400rpm Ultra Slim BU",
       "wash_load": "8.5/6 kg",
       "spin": 1400,
       "depth_cm": 47.0,
       "bu_available": "Y"
     },
     {
-      "id": "PWD1485VU",
-      "brand": "Philco",
+      "id": "TWD-BL160M4H",
+      "brand": "Toshiba",
       "type": "Washer-dryer",
-      "name": "8/5KG 1400RPM Inverter Washer Dryer (Built-under)",
-      "wash_load": "8/5 kg",
+      "name": "The GreatWaves 10/7kg Combo",
+      "wash_load": "10/7 kg",
       "spin": 1400,
-      "depth_cm": 53.0,
+      "depth_cm": 59.5,
       "bu_available": "Y"
     },
     {
-      "id": "TWD860",
-      "brand": "TGC",
+      "id": "TWD-BK90S2H",
+      "brand": "Toshiba",
       "type": "Washer-dryer",
-      "name": "8/6KG 1400RPM Inverter Washer Dryer",
+      "name": "Inverter 8/5kg 470mm Slim Combo",
+      "wash_load": "8/5 kg",
+      "spin": 1400,
+      "depth_cm": 47.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "TWD-BH90S2H",
+      "brand": "Toshiba",
+      "type": "Washer-dryer",
+      "name": "Real Inverter 8/6kg Combo",
+      "wash_load": "8/6 kg",
+      "spin": 1400,
+      "depth_cm": 47.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "TWD-BJ90S2H",
+      "brand": "Toshiba",
+      "type": "Washer-dryer",
+      "name": "Smart 8.5/5kg SteamCare Combo",
+      "wash_load": "8.5/5 kg",
+      "spin": 1400,
+      "depth_cm": 47.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WD80T654DBE",
+      "brand": "Samsung",
+      "type": "Washer-dryer",
+      "name": "QuickDrive 8/5kg Washer Dryer",
+      "wash_load": "8/5 kg",
+      "spin": 1400,
+      "depth_cm": 55.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WD90T754DBX",
+      "brand": "Samsung",
+      "type": "Washer-dryer",
+      "name": "AI Control 9/6kg Combo (Inox)",
+      "wash_load": "9/6 kg",
+      "spin": 1400,
+      "depth_cm": 60.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WD85T4046CE",
+      "brand": "Samsung",
+      "type": "Washer-dryer",
+      "name": "EcoBubble 8.5/6kg Combo",
+      "wash_load": "8.5/6 kg",
+      "spin": 1400,
+      "depth_cm": 55.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WD10T654DBH",
+      "brand": "Samsung",
+      "type": "Washer-dryer",
+      "name": "AI Control 10.5/7kg Washer Dryer",
+      "wash_load": "10.5/7 kg",
+      "spin": 1400,
+      "depth_cm": 60.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WD70T4020EE",
+      "brand": "Samsung",
+      "type": "Washer-dryer",
+      "name": "Digital Inverter 7/5kg Combo",
+      "wash_load": "7/5 kg",
+      "spin": 1200,
+      "depth_cm": 45.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "WD90TA046BE",
+      "brand": "Samsung",
+      "type": "Washer-dryer",
+      "name": "Hygiene Steam 9/6kg Combo",
+      "wash_load": "9/6 kg",
+      "spin": 1400,
+      "depth_cm": 55.0,
+      "bu_available": "N"
+    },
+    {
+      "id": "NA-V90FR1",
+      "brand": "Panasonic",
+      "type": "Washer-dryer",
+      "name": "Blue Ag+ 9/6kg Front Washer Dryer",
+      "wash_load": "9/6 kg",
+      "spin": 1400,
+      "depth_cm": 58.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "NA-S085M2",
+      "brand": "Panasonic",
+      "type": "Washer-dryer",
+      "name": "Compact Inverter 8/5kg Combo",
+      "wash_load": "8/5 kg",
+      "spin": 1400,
+      "depth_cm": 47.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "NA-S106FX1",
+      "brand": "Panasonic",
+      "type": "Washer-dryer",
+      "name": "ECONAVI 10/6kg Washer Dryer",
+      "wash_load": "10/6 kg",
+      "spin": 1400,
+      "depth_cm": 59.5,
+      "bu_available": "N"
+    },
+    {
+      "id": "NA-S075H1",
+      "brand": "Panasonic",
+      "type": "Washer-dryer",
+      "name": "ActiveFoam 7/5kg Slim Combo",
+      "wash_load": "7/5 kg",
+      "spin": 1200,
+      "depth_cm": 47.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WTD161",
+      "brand": "Miele",
+      "type": "Washer-dryer",
+      "name": "WCS 8/5kg 1500rpm Washer Dryer",
+      "wash_load": "8/5 kg",
+      "spin": 1500,
+      "depth_cm": 63.7,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WTF130WPM",
+      "brand": "Miele",
+      "type": "Washer-dryer",
+      "name": "WT1 QuickPower 7/4kg Combo",
+      "wash_load": "7/4 kg",
+      "spin": 1600,
+      "depth_cm": 63.7,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WTR860WPM",
+      "brand": "Miele",
+      "type": "Washer-dryer",
+      "name": "WT1 TwinDos 8/5kg Washer Dryer",
+      "wash_load": "8/5 kg",
+      "spin": 1600,
+      "depth_cm": 63.7,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WWEB85602GW",
+      "brand": "Whirlpool",
+      "type": "Washer-dryer",
+      "name": "8/5kg 1400rpm Washer Dryer",
+      "wash_load": "8/5 kg",
+      "spin": 1400,
+      "depth_cm": 53.5,
+      "bu_available": "Y"
+    },
+    {
+      "id": "FWDG86148W",
+      "brand": "Whirlpool",
+      "type": "Washer-dryer",
+      "name": "FreshCare+ 8/6kg Combo",
       "wash_load": "8/6 kg",
       "spin": 1400,
       "depth_cm": 54.0,
       "bu_available": "Y"
     },
     {
+      "id": "FWDG97168W",
+      "brand": "Whirlpool",
+      "type": "Washer-dryer",
+      "name": "Zen Inverter 9/7kg Combo",
+      "wash_load": "9/7 kg",
+      "spin": 1600,
+      "depth_cm": 58.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "WWD9614GW",
+      "brand": "Whirlpool",
+      "type": "Washer-dryer",
+      "name": "SupremeCare 9/6kg Combo",
+      "wash_load": "9/6 kg",
+      "spin": 1400,
+      "depth_cm": 58.0,
+      "bu_available": "Y"
+    },
+    {
+      "id": "PWD1485VU",
+      "brand": "Philco",
+      "type": "Washer-dryer",
+      "name": "8/5kg 1400rpm Inverter Combo BU",
+      "wash_load": "8/5 kg",
+      "spin": 1400,
+      "depth_cm": 53.0,
+      "bu_available": "Y"
+    },
+    {
       "id": "ES-FD8CH-W",
       "brand": "Sharp",
       "type": "Washer-dryer",
-      "name": "8/5KG 1400RPM Slim Washer Dryer",
+      "name": "8/5kg 1400rpm Slim Washer Dryer",
       "wash_load": "8/5 kg",
       "spin": 1400,
       "depth_cm": 48.0,
@@ -254,51 +1544,11 @@
       "id": "ES-FWD105AJ-B",
       "brand": "Sharp",
       "type": "Washer-dryer",
-      "name": "10.5/7KG 1400RPM ProFlex Washer Dryer",
+      "name": "10.5/7kg 1400rpm ProFlex Combo",
       "wash_load": "10.5/7 kg",
       "spin": 1400,
       "depth_cm": 59.0,
       "bu_available": "N"
-    },
-    {
-      "id": "WTD161",
-      "brand": "Miele",
-      "type": "Washer-dryer",
-      "name": "WCS 8/5KG 1500RPM Washer Dryer",
-      "wash_load": "8/5 kg",
-      "spin": 1500,
-      "depth_cm": 63.7,
-      "bu_available": "Y"
-    },
-    {
-      "id": "WWEB85602GW",
-      "brand": "Whirlpool",
-      "type": "Washer-dryer",
-      "name": "8/5KG 1400RPM Washer Dryer",
-      "wash_load": "8/5 kg",
-      "spin": 1400,
-      "depth_cm": 53.5,
-      "bu_available": "Y"
-    },
-    {
-      "id": "FFCR80120",
-      "brand": "Whirlpool",
-      "type": "Washer",
-      "name": "FreshCare+ 8KG 1200RPM Front Load Washer",
-      "wash_load": "8 kg",
-      "spin": 1200,
-      "depth_cm": 57.5,
-      "bu_available": "Y"
-    },
-    {
-      "id": "EWF8024D3WB",
-      "brand": "Electrolux",
-      "type": "Washer",
-      "name": "UltimateCare 300 8KG Front Load Washer",
-      "wash_load": "8 kg",
-      "spin": 1200,
-      "depth_cm": 50.0,
-      "bu_available": "Y"
     }
   ],
   "history": [
@@ -306,181 +1556,931 @@
       "date": "2026-10-02",
       "id": "WS12S467HK",
       "fortress": 4390,
-      "broadway": 4450
+      "broadway": 4480
     },
     {
       "date": "2026-10-02",
       "id": "WS14S468HK",
       "fortress": 4390,
-      "broadway": 4490
+      "broadway": 4310
     },
     {
       "date": "2026-10-02",
       "id": "WS12S4B5HK",
       "fortress": 4390,
-      "broadway": 4450
+      "broadway": 4390
     },
     {
       "date": "2026-10-02",
       "id": "WS14S4B8HK",
       "fortress": 4590,
-      "broadway": 4650
+      "broadway": 4510
     },
     {
       "date": "2026-10-02",
       "id": "WH43E200HK",
       "fortress": 4890,
-      "broadway": 4950
+      "broadway": 4980
     },
     {
       "date": "2026-10-02",
-      "id": "WD14S469HK",
-      "fortress": 5890,
-      "broadway": 5950
+      "id": "WG44G201HK",
+      "fortress": 6290,
+      "broadway": 6380
     },
     {
       "date": "2026-10-02",
-      "id": "WD14S468HK",
-      "fortress": 5690,
-      "broadway": 5750
+      "id": "WG44G208HK",
+      "fortress": 6690,
+      "broadway": 6650
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WG54G2A0HK",
+      "fortress": 8290,
+      "broadway": 8380
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WM12N260HK",
+      "fortress": 5390,
+      "broadway": 5350
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WM14U940HK",
+      "fortress": 11200,
+      "broadway": 11290
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WM14V890HK",
+      "fortress": 13900,
+      "broadway": 13860
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WG52A200HK",
+      "fortress": 7490,
+      "broadway": 7410
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WM14U860HK",
+      "fortress": 7290,
+      "broadway": 7290
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WS10G160HK",
+      "fortress": 3890,
+      "broadway": 3980
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WGG24401HK",
+      "fortress": 5990,
+      "broadway": 5990
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WGG24408HK",
+      "fortress": 6390,
+      "broadway": 6440
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WGG254A0HK",
+      "fortress": 7990,
+      "broadway": 8040
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WGA14200HK",
+      "fortress": 5490,
+      "broadway": 5540
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WAJ20170HK",
+      "fortress": 4490,
+      "broadway": 4490
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WAV28M20HK",
+      "fortress": 9690,
+      "broadway": 9690
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WAU28760HK",
+      "fortress": 6890,
+      "broadway": 6980
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WGG04200HK",
+      "fortress": 4990,
+      "broadway": 5080
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WGG04409HK",
+      "fortress": 5390,
+      "broadway": 5310
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WGA254A0HK",
+      "fortress": 8490,
+      "broadway": 8490
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WGB244A0HK",
+      "fortress": 10990,
+      "broadway": 10950
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WLR24461HK",
+      "fortress": 4790,
+      "broadway": 4750
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WLS24468HK",
+      "fortress": 5190,
+      "broadway": 5280
     },
     {
       "date": "2026-10-02",
       "id": "FVBS70W2B",
       "fortress": 3190,
-      "broadway": 3250
+      "broadway": 3240
     },
     {
       "date": "2026-10-02",
       "id": "FVBS90W2G",
       "fortress": 3990,
-      "broadway": 4050
+      "broadway": 3990
     },
     {
       "date": "2026-10-02",
       "id": "FX4S10W2",
       "fortress": 5390,
-      "broadway": 5450
+      "broadway": 5350
     },
     {
       "date": "2026-10-02",
       "id": "FX7S12W4",
       "fortress": 5890,
-      "broadway": 5990
+      "broadway": 5850
     },
     {
       "date": "2026-10-02",
-      "id": "FVBA70GW2G",
-      "fortress": 4390,
-      "broadway": 4450
+      "id": "FV7490V2W",
+      "fortress": 5190,
+      "broadway": 5150
     },
     {
       "date": "2026-10-02",
-      "id": "FVBA70M2G",
+      "id": "FV7490V2B",
+      "fortress": 5690,
+      "broadway": 5610
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FV5080W3",
       "fortress": 4690,
-      "broadway": 4750
+      "broadway": 4610
     },
     {
       "date": "2026-10-02",
-      "id": "FV9AE90W2",
-      "fortress": 5490,
-      "broadway": 5550
+      "id": "FV9A13W2",
+      "fortress": 8890,
+      "broadway": 8890
     },
     {
       "date": "2026-10-02",
-      "id": "FV9AE90B2",
-      "fortress": 5090,
-      "broadway": 5190
+      "id": "FV7480W2",
+      "fortress": 4890,
+      "broadway": 4980
     },
     {
       "date": "2026-10-02",
-      "id": "FX4A12ES2",
-      "fortress": 6790,
-      "broadway": 6890
+      "id": "FV5090W2",
+      "fortress": 4490,
+      "broadway": 4490
     },
     {
       "date": "2026-10-02",
-      "id": "FX9U12GW2",
-      "fortress": 13490,
-      "broadway": 13800
+      "id": "FV9A11W2",
+      "fortress": 7990,
+      "broadway": 8040
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FX2S90W2",
+      "fortress": 4990,
+      "broadway": 5080
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FX3S10B2",
+      "fortress": 6390,
+      "broadway": 6310
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FV5490W2",
+      "fortress": 4790,
+      "broadway": 4710
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FV7080W2",
+      "fortress": 4390,
+      "broadway": 4390
     },
     {
       "date": "2026-10-02",
       "id": "TW-T21BU80UWH",
       "fortress": 2999,
-      "broadway": 3050
+      "broadway": 2919
     },
     {
       "date": "2026-10-02",
       "id": "TW-T22BU95UWH",
       "fortress": 3680,
-      "broadway": 3750
+      "broadway": 3770
     },
     {
       "date": "2026-10-02",
-      "id": "TWD-BN90GF4H",
-      "fortress": 3790,
-      "broadway": 3850
+      "id": "TW-BL80A2H",
+      "fortress": 3280,
+      "broadway": 3330
     },
     {
       "date": "2026-10-02",
-      "id": "TWD-T21BU95UWH",
+      "id": "TW-BL90A4H",
+      "fortress": 3780,
+      "broadway": 3830
+    },
+    {
+      "date": "2026-10-02",
+      "id": "TW-BL100A4H",
+      "fortress": 4280,
+      "broadway": 4280
+    },
+    {
+      "date": "2026-10-02",
+      "id": "TW-BK90S2H",
+      "fortress": 3580,
+      "broadway": 3580
+    },
+    {
+      "date": "2026-10-02",
+      "id": "TW-BK100S2H",
+      "fortress": 3980,
+      "broadway": 4070
+    },
+    {
+      "date": "2026-10-02",
+      "id": "TW-127XP2H",
+      "fortress": 11980,
+      "broadway": 11940
+    },
+    {
+      "date": "2026-10-02",
+      "id": "TW-BH85S2H",
+      "fortress": 3190,
+      "broadway": 3150
+    },
+    {
+      "date": "2026-10-02",
+      "id": "TW-T25BU10UWH",
+      "fortress": 4480,
+      "broadway": 4570
+    },
+    {
+      "date": "2026-10-02",
+      "id": "TW-BL110A4H",
+      "fortress": 4680,
+      "broadway": 4640
+    },
+    {
+      "date": "2026-10-02",
+      "id": "TW-BK80S2H",
+      "fortress": 3380,
+      "broadway": 3470
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WW90T554DAN",
+      "fortress": 4990,
+      "broadway": 5040
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WW80TA046TE",
       "fortress": 4290,
+      "broadway": 4250
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WW10T654DLH",
+      "fortress": 6990,
+      "broadway": 7080
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WW70TA026TE",
+      "fortress": 3790,
+      "broadway": 3880
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WW90T654DLN",
+      "fortress": 5690,
+      "broadway": 5610
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WW80T554DAX",
+      "fortress": 4890,
+      "broadway": 4940
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WW12TP94DSB",
+      "fortress": 8990,
+      "broadway": 8950
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WW85T4040CE",
+      "fortress": 4390,
       "broadway": 4350
     },
     {
       "date": "2026-10-02",
-      "id": "TWD-T22BU95UWH",
-      "fortress": 4580,
-      "broadway": 4650
+      "id": "WW70T3020WW",
+      "fortress": 3490,
+      "broadway": 3490
     },
     {
       "date": "2026-10-02",
-      "id": "PWD1485VU",
-      "fortress": 4590,
-      "broadway": 4650
+      "id": "WW90TA046AE",
+      "fortress": 4690,
+      "broadway": 4740
     },
     {
       "date": "2026-10-02",
-      "id": "TWD860",
-      "fortress": 4450,
-      "broadway": 4500
+      "id": "WW10TP44DSX",
+      "fortress": 7590,
+      "broadway": 7550
     },
     {
       "date": "2026-10-02",
-      "id": "ES-FD8CH-W",
-      "fortress": 3890,
-      "broadway": 3950
+      "id": "WW80TA026TE",
+      "fortress": 4090,
+      "broadway": 4050
     },
     {
       "date": "2026-10-02",
-      "id": "ES-FWD105AJ-B",
-      "fortress": 5980,
-      "broadway": 6050
+      "id": "NA-140VX7",
+      "fortress": 5380,
+      "broadway": 5430
     },
     {
       "date": "2026-10-02",
-      "id": "WTD161",
-      "fortress": 17440,
-      "broadway": 17800
+      "id": "NA-128XB1",
+      "fortress": 4280,
+      "broadway": 4280
     },
     {
       "date": "2026-10-02",
-      "id": "WWEB85602GW",
-      "fortress": 4890,
-      "broadway": 4950
+      "id": "NA-127XB1",
+      "fortress": 3880,
+      "broadway": 3880
+    },
+    {
+      "date": "2026-10-02",
+      "id": "NA-148VG6",
+      "fortress": 4980,
+      "broadway": 4900
+    },
+    {
+      "date": "2026-10-02",
+      "id": "NA-149VG6",
+      "fortress": 5680,
+      "broadway": 5770
+    },
+    {
+      "date": "2026-10-02",
+      "id": "NA-120VG6",
+      "fortress": 5880,
+      "broadway": 5930
+    },
+    {
+      "date": "2026-10-02",
+      "id": "NA-140VG4",
+      "fortress": 6280,
+      "broadway": 6280
+    },
+    {
+      "date": "2026-10-02",
+      "id": "NA-128MB1",
+      "fortress": 3980,
+      "broadway": 3980
+    },
+    {
+      "date": "2026-10-02",
+      "id": "NA-126XB1",
+      "fortress": 3580,
+      "broadway": 3670
+    },
+    {
+      "date": "2026-10-02",
+      "id": "NA-148VX6",
+      "fortress": 5280,
+      "broadway": 5240
     },
     {
       "date": "2026-10-02",
       "id": "FFCR80120",
       "fortress": 3990,
-      "broadway": 4050
+      "broadway": 3950
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FFCR90420",
+      "fortress": 4690,
+      "broadway": 4610
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FFCR70120",
+      "fortress": 3590,
+      "broadway": 3680
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FWG81284W",
+      "fortress": 4190,
+      "broadway": 4150
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FWG91484W",
+      "fortress": 4890,
+      "broadway": 4980
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FFCR10420",
+      "fortress": 5490,
+      "broadway": 5410
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FWG71284W",
+      "fortress": 3790,
+      "broadway": 3710
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WFB8514GW",
+      "fortress": 4490,
+      "broadway": 4410
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WFB9514GW",
+      "fortress": 5190,
+      "broadway": 5190
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FFCR80140",
+      "fortress": 4390,
+      "broadway": 4480
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WCA020",
+      "fortress": 9880,
+      "broadway": 9800
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WCD120",
+      "fortress": 11980,
+      "broadway": 12070
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WCI860",
+      "fortress": 14980,
+      "broadway": 14940
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WCR860",
+      "fortress": 16980,
+      "broadway": 16900
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WWG660",
+      "fortress": 13980,
+      "broadway": 14030
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WWD120",
+      "fortress": 10980,
+      "broadway": 10900
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WCA030",
+      "fortress": 10480,
+      "broadway": 10440
     },
     {
       "date": "2026-10-02",
       "id": "EWF8024D3WB",
       "fortress": 4190,
-      "broadway": 4250
+      "broadway": 4240
+    },
+    {
+      "date": "2026-10-02",
+      "id": "EWF9024D3WB",
+      "fortress": 4890,
+      "broadway": 4940
+    },
+    {
+      "date": "2026-10-02",
+      "id": "EWF9042R7WB",
+      "fortress": 6290,
+      "broadway": 6340
+    },
+    {
+      "date": "2026-10-02",
+      "id": "EWF1042R7WB",
+      "fortress": 7290,
+      "broadway": 7290
+    },
+    {
+      "date": "2026-10-02",
+      "id": "EWF7024D3WB",
+      "fortress": 3790,
+      "broadway": 3710
+    },
+    {
+      "date": "2026-10-02",
+      "id": "EWF8024P5WB",
+      "fortress": 4590,
+      "broadway": 4510
+    },
+    {
+      "date": "2026-10-02",
+      "id": "ZWF8045D2WA",
+      "fortress": 3890,
+      "broadway": 3850
+    },
+    {
+      "date": "2026-10-02",
+      "id": "ZWF7025D2WA",
+      "fortress": 3390,
+      "broadway": 3480
+    },
+    {
+      "date": "2026-10-02",
+      "id": "PW8141",
+      "fortress": 3690,
+      "broadway": 3690
+    },
+    {
+      "date": "2026-10-02",
+      "id": "RO1486DWHC7",
+      "fortress": 3290,
+      "broadway": 3290
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WD14S469HK",
+      "fortress": 5890,
+      "broadway": 5940
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WD14S468HK",
+      "fortress": 5690,
+      "broadway": 5740
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WN44A2X0HK",
+      "fortress": 7690,
+      "broadway": 7650
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WN34A1U1HK",
+      "fortress": 6990,
+      "broadway": 6950
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WD14U5C0HK",
+      "fortress": 10590,
+      "broadway": 10510
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WD14S460HK",
+      "fortress": 7390,
+      "broadway": 7390
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WD14H420HK",
+      "fortress": 6890,
+      "broadway": 6890
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WD15H540HK",
+      "fortress": 8990,
+      "broadway": 8910
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WNA14400HK",
+      "fortress": 7490,
+      "broadway": 7450
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WNA24408HK",
+      "fortress": 7890,
+      "broadway": 7980
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WDU28561HK",
+      "fortress": 9290,
+      "broadway": 9340
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WNG254U0HK",
+      "fortress": 8990,
+      "broadway": 9080
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WDU28560HK",
+      "fortress": 9190,
+      "broadway": 9190
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WNA13400HK",
+      "fortress": 6990,
+      "broadway": 7080
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WVH28420HK",
+      "fortress": 7290,
+      "broadway": 7340
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FVBA70GW2G",
+      "fortress": 4390,
+      "broadway": 4480
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FVBA70M2G",
+      "fortress": 4690,
+      "broadway": 4610
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FV9AE90W2",
+      "fortress": 5490,
+      "broadway": 5490
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FV9AE90B2",
+      "fortress": 5090,
+      "broadway": 5010
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FX4A12ES2",
+      "fortress": 6790,
+      "broadway": 6880
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FX9U12GW2",
+      "fortress": 13490,
+      "broadway": 13540
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FV9S90V2W",
+      "fortress": 6890,
+      "broadway": 6980
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FV7950S2W",
+      "fortress": 6190,
+      "broadway": 6280
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FV9411D4",
+      "fortress": 9990,
+      "broadway": 9950
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FV7905W2",
+      "fortress": 5890,
+      "broadway": 5980
+    },
+    {
+      "date": "2026-10-02",
+      "id": "TWD-BN90GF4H",
+      "fortress": 3790,
+      "broadway": 3840
+    },
+    {
+      "date": "2026-10-02",
+      "id": "TWD-T21BU95UWH",
+      "fortress": 4290,
+      "broadway": 4380
+    },
+    {
+      "date": "2026-10-02",
+      "id": "TWD-T22BU95UWH",
+      "fortress": 4580,
+      "broadway": 4580
+    },
+    {
+      "date": "2026-10-02",
+      "id": "TWD-BL160M4H",
+      "fortress": 6280,
+      "broadway": 6330
+    },
+    {
+      "date": "2026-10-02",
+      "id": "TWD-BK90S2H",
+      "fortress": 3990,
+      "broadway": 3990
+    },
+    {
+      "date": "2026-10-02",
+      "id": "TWD-BH90S2H",
+      "fortress": 4190,
+      "broadway": 4240
+    },
+    {
+      "date": "2026-10-02",
+      "id": "TWD-BJ90S2H",
+      "fortress": 4490,
+      "broadway": 4580
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WD80T654DBE",
+      "fortress": 5990,
+      "broadway": 5910
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WD90T754DBX",
+      "fortress": 7890,
+      "broadway": 7890
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WD85T4046CE",
+      "fortress": 5290,
+      "broadway": 5210
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WD10T654DBH",
+      "fortress": 8490,
+      "broadway": 8410
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WD70T4020EE",
+      "fortress": 4590,
+      "broadway": 4590
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WD90TA046BE",
+      "fortress": 6390,
+      "broadway": 6310
+    },
+    {
+      "date": "2026-10-02",
+      "id": "NA-V90FR1",
+      "fortress": 7180,
+      "broadway": 7140
+    },
+    {
+      "date": "2026-10-02",
+      "id": "NA-S085M2",
+      "fortress": 5980,
+      "broadway": 6070
+    },
+    {
+      "date": "2026-10-02",
+      "id": "NA-S106FX1",
+      "fortress": 8480,
+      "broadway": 8570
+    },
+    {
+      "date": "2026-10-02",
+      "id": "NA-S075H1",
+      "fortress": 5480,
+      "broadway": 5440
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WTD161",
+      "fortress": 17440,
+      "broadway": 17400
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WTF130WPM",
+      "fortress": 15980,
+      "broadway": 16070
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WTR860WPM",
+      "fortress": 19980,
+      "broadway": 20070
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WWEB85602GW",
+      "fortress": 4890,
+      "broadway": 4890
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FWDG86148W",
+      "fortress": 5190,
+      "broadway": 5110
+    },
+    {
+      "date": "2026-10-02",
+      "id": "FWDG97168W",
+      "fortress": 6590,
+      "broadway": 6640
+    },
+    {
+      "date": "2026-10-02",
+      "id": "WWD9614GW",
+      "fortress": 5990,
+      "broadway": 5950
+    },
+    {
+      "date": "2026-10-02",
+      "id": "PWD1485VU",
+      "fortress": 4590,
+      "broadway": 4550
+    },
+    {
+      "date": "2026-10-02",
+      "id": "ES-FD8CH-W",
+      "fortress": 3890,
+      "broadway": 3980
+    },
+    {
+      "date": "2026-10-02",
+      "id": "ES-FWD105AJ-B",
+      "fortress": 5980,
+      "broadway": 6070
     }
   ]
 }
