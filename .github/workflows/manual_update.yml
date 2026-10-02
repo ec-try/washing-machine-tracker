@@ -1,7 +1,7 @@
 name: 手動更新洗衣機售價
 
 on:
-  workflow_dispatch: # 代表只接受手動觸發按鈕，絕不自動定時執行
+  workflow_dispatch:
 
 jobs:
   scrape-and-update:
@@ -15,18 +15,19 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: 安裝網絡庫
+      - name: 安裝真實瀏覽器與爬蟲引擎
         run: |
-          pip install requests
+          pip install requests beautifulsoup4 playwright
+          playwright install chromium
 
-      - name: 執行安全爬蟲
+      - name: 執行實時在線爬蟲 (無預設)
         run: |
           python scraper.py
 
-      - name: 儲存最新價格回 GitHub
+      - name: 儲存實時最新數據回 GitHub
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
           git add data.json
-          git commit -m "手動更新洗衣機售價數據 [skip ci]" || exit 0
+          git commit -m "Real-time live sync from Fortress & Broadway [skip ci]" || exit 0
           git push
